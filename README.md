@@ -341,7 +341,7 @@ $sabe_volar || $tiene_2_patas; // false
 Son los operadores que nos ayudan a comparar
 dos valores.
 
-### [Sample Operadores relacionales](../Samples/operadores-relacionales.php)
+### [Sample Operadores relacionales](./Samples/operadores-relacionales.php)
 
 
 Operador Descripción
