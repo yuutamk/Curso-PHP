@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://programadorwebvalencia.com/cursos/php/arrays/ -->
+<html lang="es" class="no-mobile" style="--scrollbarWidth:7.5px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Yandex.Metrika counter -->
+	<script async="" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/tag.js.descargar"></script><script type="text/javascript">
+	 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+	     m[i].l=1*new Date();
+	     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+	     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+	 (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+	 ym(92159295, "init", {
+             clickmap:true,
+             trackLinks:true,
+             accurateTrackBounce:true,
+             webvisor:true
+	 });
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/92159295" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+	<!-- Common metas -->
+	
+	<link type="text/plain" rel="author" href="https://programadorwebvalencia.com/humans.txt">
+	<meta name="theme-color" content="#f7b143">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<link rel="icon" type="image/png" href="https://programadorwebvalencia.com/favicon.png">
+	<meta name="keywords" content="fullstack, frontend, backend, desarrollador, wordpress, front-end, back-end, python, php, javascript, smartphone, movil, android, ios, clojure, pwa">
+	
+	
+        
+    	<title>Lección 3: Arrays | Curso PHP 8.x</title>
+    	<meta content="Lección 3: Arrays | Curso PHP 8.x" property="og:title">
+	
+	  <!-- PWA -->
+	  <link rel="manifest" href="https://programadorwebvalencia.com/manifests/blog.json">
+	  <link rel="apple-touch-icon" href="https://programadorwebvalencia.com/img/manifest/apple-icon-180.png">
+	 <meta name="apple-mobile-web-app-capable" content="yes">
+	 <!-- OpenGraph -->
+	 <meta content="Programador Web Valencia" property="og:site_name">
+
+	 
+	 <meta content="https://programadorwebvalencia.com/cursos/php/arrays/" property="og:url">
+	 
+
+	 
+	 <meta property="og:image" content="https://programadorwebvalencia.com/img/blog/2018/05/php.jpg">
+	 
+	 <!-- OpenGraph End -->
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/css" rel="stylesheet">
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/bootstrap.min.css" rel="stylesheet">
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/style.css" rel="stylesheet">
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/animate.css" rel="stylesheet">
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/et-line.css" rel="stylesheet">
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/font-awesome.min.css" rel="stylesheet">
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/owl.carousel.css" rel="stylesheet">
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/magnific-popup.css" rel="stylesheet">
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/vertical.min.css" rel="stylesheet">
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/theme-orange.css" rel="stylesheet">
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/syntax.css" rel="stylesheet">
+	 
+
+	 <link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/main.css" rel="stylesheet">
+	 <!-- Javascript -->
+	 <script>window.url_static = 'https://programadorwebvalencia.com';</script><style type="text/css" id="operaUserStyle"></style>
+	 <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/jquery-2.1.3.min.js.descargar"></script>
+	 <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/vue.min.js.descargar"></script>
+	 <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/vue-resource@1.3.6.js.descargar"></script>
+	 <!-- Javascript End -->
+  <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><style type="text/css">:root zeus-ad, :root topadblock, :root span[id^="ezoic-pub-ad-placeholder-"], :root guj-ad, :root gpt-ad, :root div[jsdata*="CarouselPLA-"][data-id^="CarouselPLA-"], :root div[id^="zergnet-widget"], :root div[id^="yandex_ad"], :root div[id^="vuukle-ad-"], :root div[id^="sticky_ad_"], :root div[id^="rc-widget-"], :root div[id^="gpt_ad_"], :root div[id^="ezoic-pub-ad-"], :root div[id^="div-gpt-"], :root div[id^="dfp-ad-"], :root div[id^="advads_ad_"], :root div[id^="adspot-"], :root div[id^="ads300_250-widget-"], :root div[id^="ads300_100-widget-"], :root div[id^="ads250_250-widget-"], :root div[id^="adrotate_widgets-"], :root div[id^="adngin-"], :root div[id^="_vdo_ads_player_ai_"], :root div[id*="ScriptRoot"], :root div[id*="MarketGid"], :root div[data-native_ad], :root div[data-mini-ad-unit], :root div[data-insertion], :root div[data-id-advertdfpconf], :root div[data-google-query-id], :root hl-adsense, :root div[data-contentexchange-widget], :root div[data-content="Advertisement"], :root div[data-alias="300x250 Ad 2"], :root div[data-alias="300x250 Ad 1"], :root div[data-adzone], :root div[data-adunit-path], :root div[data-ad-wrapper], :root div[data-ad-targeting], :root div[data-ad-placeholder], :root div[class^="native-ad-"], :root div[data-dfp-id], :root div[class^="kiwi-ad-wrapper"], :root div[class^="Adstyled__AdWrapper-"], :root div[aria-label="Ads"], :root display-ads, :root display-ad-component, :root aside[id^="adrotate_widgets-"], :root article.ad, :root ark-top-ad, :root app-advertisement, :root app-ad, :root amp-fx-flying-carpet, :root amp-embed[type="taboola"], :root amp-connatix-player, :root amp-ad-custom, :root ad-shield-ads, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root citrus-ad-wrapper, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[href^="https://yogacomplyfuel.com/"], :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://www.onlineusershielder.com/"], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="https://www.nudeidols.com/cams/"], :root a[href^="https://www.mypornstarcams.com/landing/click/"], :root a[href^="https://www.kingsoffetish.com/tour?partner_id="], :root a[href^="https://www.infowarsstore.com/"] > img, :root a[href^="https://www.highcpmrevenuenetwork.com/"], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://www.financeads.net/tc.php?"], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root div[class^="Display_displayAd"], :root a[href^="https://www.sheetmusicplus.com/?aff_id="], :root a[href^="https://www.bang.com/?aff="], :root [data-template-type="nativead"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://webroutetrk.com/"], :root a[href^="https://twinrdsyn.com/"], :root a[href^="https://tsartech.g2afse.com/"], :root [href^="https://www.mypatriotsupply.com/"] > img, :root a[href^="https://trk.softonixs.xyz/"], :root a[href^="https://trk.nfl-online-streams.club/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.afcpatrk.com/"], :root a[href^="https://track.adform.net/"], :root a[href^="https://torguard.net/aff.php"] > img, :root div[data-adname], :root a[href^="https://thechleads.pro/"], :root [data-role="tile-ads-module"], :root a[href^="https://adsrv4k.com/"], :root a[href^="https://go.xlviirdr.com"], :root a[href^="https://thaudray.com/"], :root a[href^="https://www.5mno3.com/"], :root a[href^="https://taghaugh.com/"], :root a[href^="https://click.candyoffers.com/"], :root [href^="https://zstacklife.com/"] img, :root a[href^="https://t.aslnk.link/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://go.trackitalltheway.com/"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="https://syndication.exoclick.com/"], :root a[href^="https://syndication.dynsrvtbg.com/"], :root a[href^="https://streamate.com/landing/click/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="https://static.fleshlight.com/images/banners/"], :root a[href^="https://go.strpjmp.com/"], :root a[href^="https://refpa4903566.top/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="https://serve.awmdelivery.com/"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root [href^="https://r.kraken.com/"], :root a[href^="https://mmwebhandler.aff-online.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root a[href^="https://pb-track.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root div[id^="ad_position_"], :root a[href^="https://ovb.im/"], :root div[id^="ad-div-"], :root a[href^="https://newbinotracs.com/"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root [href^="https://stvkr.com/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root [href^="https://www.herbanomic.com/"] > img, :root a[href^="https://maymooth-stopic.com/"], :root a[href^="https://loboclick.com"], :root [href^="https://routewebtk.com/"], :root a[href^="https://see.kmisln.com/"], :root .nya-slot[style], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="https://lobimax.com/"], :root a[href^="https://lead1.pl/"], :root a[href^="https://refpa.top/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://ads.leovegas.com/redirect.aspx?"], :root a[href^="https://land.brazzersnetwork.com/landing/"], :root a[href^="https://juicyads.in/"], :root a[href^="https://itubego.com/video-downloader/?affid="], :root a[href^="https://iqbroker.com/"][href*="?aff="], :root a[href^="https://incisivetrk.cvtr.io/click?"], :root [data-revive-zoneid], :root a[href^="https://googleads.g.doubleclick.net/pcs/click"], :root a[href^="https://clk.wrenchsound.store/"], :root a[href^="https://go.zybrdr.com"], :root [href^="http://join.michelle-austin.com/"], :root [class^="tile-picker__CitrusBannerContainer-sc-"], :root a[href^="https://go.xxxiijmp.com"], :root a[href^="https://go.xtbaffiliates.com/"], :root a[href^="https://ismlks.com/"], :root a[href^="//a.bestcontentfare.top/"], :root [href^="https://www.mypillow.com/"] > img, :root a[href^="https://azpresearch.club/"], :root a[href^="https://go.xlirdr.com"], :root [data-css-class="dfp-inarticle"], :root .card-captioned.crd > .crd--cnt > .s2nPlayer, :root a[href^="https://go.tmrjmp.com"], :root a[href^="https://go.skinstrip.net"][href*="?campaignId="], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://go.goaserv.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://go.ebrokerserve.com/"], :root a[href^="https://go.dmzjmp.com"], :root a[href^="https://twinrdsrv.com/"], :root a[href^="https://go.admjmp.com/"], :root [href^="https://kingered-banctours.com/"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a-ad, :root a[href^="https://affiliate.rusvpn.com/click.php?"], :root a[href^="https://geniusdexchange.com/"], :root a[href^="https://frameworkdeserve.com/"], :root a[href^="https://flirtandsweets.life/"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="https://financeads.net/tc.php?"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://s.optzsrv.com/"], :root bottomadblock, :root a[href^="https://fertilitycommand.com/"], :root [data-freestar-ad], :root a[href^="https://fc.lc/ref/"], :root div[data-native-ad], :root a[href^="https://engine.trackingdesks.com/"], :root [href^="https://totlnkcl.com/"], :root a[href^="https://www.adskeeper.com"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root [href^="https://www.reimageplus.com/"], :root a[href^="https://engine.phn.doublepimp.com/"], :root a[href^="https://engine.blueistheneworanges.com/"], :root div[id^="optidigital-adslot"], :root a[href^="https://wantopticalfreelance.com/"], :root a[href^="https://dl-protect.net/"], :root a[href^="https://datingoffers30.info/"], :root a[href^="https://clixtrac.com/"], :root a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"], :root a[href^="https://join.dreamsexworld.com/"], :root a[href^="https://click.linksynergy.com/fs-bin/"], :root AD-TRIPLE-BOX, :root a[href^="https://click.hoolig.app/"], :root a[href^="https://track.totalav.com/"], :root img[src^="https://images.purevpnaffiliates.com"], :root a[href^="https://porntubemate.com/"], :root a[href^="http://www.gfrevenge.com/landing/"], :root a[href^="https://clickadilla.com/"], :root a[href^="https://click.dtiserv2.com/"], :root a[href^="https://go.xlvirdr.com"], :root a[href^="https://claring-loccelkin.com/"], :root [class^="s2nPlayer"], :root a[href^="https://chaturbate.jjgirls.com/?track="], :root a[href^="https://chaturbate.com/in/?track="], :root a[href^="https://chaturbate.com/in/?tour="], :root a[href^="https://cams.imagetwist.com/in/?track="], :root a[href^="https://cam4com.go2cloud.org/"], :root a[href^="https://affcpatrk.com/"], :root a[href^="https://bongacams2.com/track?"], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="https://bngpt.com/"], :root a[href^="https://bluedelivery.pro/"], :root #topstuff > #tads, :root a[href^="https://black77854.com/"], :root a[href^="https://ndt5.net/"], :root a[href^="https://batheunits.com/"], :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"], :root a[href^="https://banners.livepartners.com/"], :root a[href^="https://m.do.co/c/"] > img, :root [href="https://masstortfinancing.com"] img, :root a[href^="https://bongacams10.com/track?"], :root a[href^="https://albionsoftwares.com/"], :root a[href^="https://t.hrtye.com/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://www.adxsrve.com/"], :root a[href^="https://convertmb.com/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://intenseaffiliates.com/redirect/"], :root a[href^="https://aweptjmp.com/"], :root a[href^="https://ads.ad4game.com/"], :root [id^="google_ads_iframe"], :root a[href^="https://syndication.optimizesrv.com/"], :root a[href^="https://affpa.top/"], :root a[href^="https://adnetwrk.com/"], :root a[href^="https://adjoincomprise.com/"], :root [href^="http://misslinkvocation.com/"], :root a[href^="https://adclick.g.doubleclick.net/"], :root a[href^="https://go.nordvpn.net/aff"] > img, :root [href^="http://clicks.totemcash.com/"], :root a[href^="https://misspkl.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root a[href^="https://ad.kubiccomps.icu/"], :root a[href^="https://adswick.com/"], :root a[href^="https://a2.adform.net/"], :root a[href^="https://iactrivago.ampxdirect.com/"], :root a[href^="https://a.medfoodhome.com/"], :root a[href^="https://a.bestcontentoperation.top/"], :root [data-m-ad-id], :root a[href^="https://a-ads.com/"], :root [href="https://ourgoldguy.com/contact/"] img, :root a[href^="https://brightadnetwork.com/"], :root [href^="https://www.avantlink.com/click.php"] img, :root a[href^="http://www.onwebcam.com/random?t_link="], :root a[href^="http://www.mrskin.com/tour"], :root a[href^="https://agacelebir.com/"], :root a[href^="https://spygasm.com/track?"], :root a[href^="http://d2.zedo.com/"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="http://trk.globwo.online/"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href^="http://traffic.tc-clicks.com/"], :root a[href^="http://tour.mrskin.com/"], :root a[href^="https://join.virtualtaboo.com/track/"], :root a[href^="https://funkydaters.com/"], :root [id^="ad_sky"], :root a[href^="http://https://www.get-express-vpn.com/offer/"], :root div[id^="google_dfp_"], :root a[href^="http://googleads.g.doubleclick.net/pcs/click"], :root .rc-cta[data-target], :root [href^="http://go.cm-trk2.com/"], :root a[href^="http://click.payserve.com/"], :root a[href^="https://porngames.adult/?SID="], :root a[href^="https://landing1.brazzersnetwork.com"], :root #slashboxes > .deals-rail, :root [href^="http://globsads.com/"], :root [href^="https://www.brighteonstore.com/products/"] img, :root a[href^="http://bc.vc/?r="], :root a[href^="https://mityneedn.com/"], :root [href^="http://homemoviestube.com/"], :root a[href^="http://ad.doubleclick.net/"], :root a[href^="//zunsoach.com/"], :root a[href^="http://static.fleshlight.com/images/banners/"], :root a[href^="https://a.adtng.com/"], :root a[href^="//pubads.g.doubleclick.net/"], :root a[href^="//go.eabids.com/"], :root [data-d-ad-id], :root a[href*=".engine.adglare.net/"], :root [data-dynamic-ads], :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root [data-ad-width], :root [href^="https://join.playboyplus.com/track/"], :root a[data-url^="http://paid.outbrain.com/network/redir?"] + .author, :root a[href^="https://axdsz.pro/"], :root a[href^="http://bodelen.com/"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root [href^="https://cpa.10kfreesilver.com/"], :root a[href^="https://a.bestcontentfood.top/"], :root a[href^="https://reinstandpointdumbest.com/"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://wct.link/"], :root [href^="https://goldforyourfuture.com/clk.trk"] img, :root [href^="https://infinitytrk.com/"], :root [onclick^="location.href='http://www.reimageplus.com"], :root .commercial-unit-mobile-top .jackpot-main-content-container > .UpgKEd + .nZZLFc > .vci, :root [id^="section-ad-banner"], :root .commercial-unit-mobile-top > div[data-pla="1"], :root a[href^="https://go.julrdr.com/"], :root .trc_rbox_div .syndicatedItemUB, :root [href^="https://zone.gotrackier.com/"], :root [href^="https://www.targetingpartner.com/"], :root [href^="https://detachedbates.com/"], :root a[href^="https://fourwhenstatistics.com/"], :root [href^="https://www.restoro.com/"], :root [href^="https://ilovemyfreedoms.com/landing-"], :root a[href^="https://staRTgaming.net/tienda/"], :root a[href^="https://STaRtgAmInG.net/tienda/"], :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="], :root a[href^="https://tour.mrskin.com/"], :root div[id^="ad-position-"], :root a[href^="http://adultfriendfinder.com/go/page/landing"], :root a[href^="http://affiliate.glbtracker.com/"], :root a[href^="https://leg.xyz/?track="], :root div[id^="crt-"][style], :root a[href^="http://adultgames.xxx/"], :root a[href^="https://traffic.bannerator.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"], :root [href^="https://secure.bmtmicro.com/servlets/"], :root a[href^="https://losingoldfry.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root a[href^="https://oackoubs.com/"], :root a[href^="https://ak.psaltauw.net/"], :root a[href^="https://awptjmp.com/"], :root a[href^="https://go.goasrv.com/"], :root .commercial-unit-mobile-top > .v7hl4d, :root [href^="http://mypillow.com/"] > img, :root a[href^="http://bongacams.com/track?"], :root a[href^="https://fleshlight.sjv.io/"], :root [data-ad-manager-id], :root a[href^="https://promo-bc.com/"], :root a[href^="https://clicks.pipaffiliates.com/"], :root [href^="https://noqreport.com/"] > img, :root a[href^="https://go.hpyjmp.com"], :root ADS-RIGHT, :root [href^="https://mystore.com/"] > img, :root a[href^="https://www.highperformancecpmgate.com/"], :root a[href^="https://t.grtyi.com/"], :root [href^="https://mypatriotsupply.com/"] > img, :root [href^="https://mylead.global/stl/"] > img, :root #leader-companion > a[href], :root a[href^="https://transfer.xe.com/signup/track/redirect?"], :root .vid-present > .van_vid_carousel__padding, :root a[href^="https://go.xxxijmp.com"], :root [href^="https://istlnkcl.com/"], :root [href^="https://www.hostg.xyz/"] > img, :root .section-subheader > .section-hotel-prices-header, :root [href^="https://go.affiliatexe.com/"], :root [href^="https://go.4rabettraff.com/"], :root a[href^="https://tm-offers.gamingadult.com/"], :root [href^="https://charmingdatings.life/"], :root [href^="https://glersakr.com/"], :root ins.adsbygoogle, :root a[href^="https://1startfiledownload1.com/"], :root .trc_rbox_border_elm .syndicatedItem, :root a[href^="http://www.onclickmega.com/jump/next.php?"], :root a[href^="http://adf.ly/?id="], :root a[href^="https://wittered-mainging.com/"], :root [href^="https://engine.gettopple.com/"], :root a[href^="https://go.gldrdr.com/"], :root [data-id^="div-gpt-ad"], :root a[href^="https://tracker.loropartners.com/"], :root [href^="https://awbbjmp.com/"], :root a[href^="https://k2s.cc/pr/"], :root [href^="https://affect3dnetwork.com/track/"], :root a[href^="https://camfapr.com/landing/click/"], :root [href="//sexcams.plus/"], :root a[href^="https://go.currency.com/"], :root [href^="http://www.mypillow.com/"] > img, :root div[id^="div-ads-"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root a[href^="https://www.sugarinstant.com/?partner_id="], :root a[href^="https://adultfriendfinder.com/go/page/landing"], :root [href^="https://join3.bannedsextapes.com"], :root div[data-spotim-slot], :root [href^="https://antiagingbed.com/discount/"] > img, :root a[href^="https://go.247traffic.com/"], :root [href^="https://join.girlsoutwest.com/"], :root [href^="http://trafficare.net/"], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="https://adserver.adreactor.com/"], :root [href^="http://join.shemalesfromhell.com/"], :root [id^="ad_slider"], :root #searchResultsList > div > div[onclick$="'inline.ad'});"], :root [data-adbridg-ad-class], :root a[href^="http://www.adultdvdempire.com/?partner_id="][href*="&utm_"], :root [href^="http://join.shemale.xxx/"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root [href^="http://www.fleshlightgirls.com/"], :root [href^="http://join.trannies-fuck.com/"], :root .trc_rbox .syndicatedItem, :root a[href^="http://cam4com.go2cloud.org/aff_c?"], :root a[href^="https://cpmspace.com/"], :root [href^="https://freecourseweb.com/"] > .sitefriend, :root a[href^="https://thefacux.com/"], :root a[href^="https://ads.planetwin365affiliate.com/redirect.aspx?"], :root [href^="http://join.rodneymoore.com/"], :root a[href*=".trust.zone"], :root [href^="https://shrugartisticelder.com"], :root [href^="https://go.xlrdr.com"], :root a[href^="https://staRTgamIng.net/tienda/"], :root div[id^="lazyad-"], :root a[href^="http://com-1.pro/"], :root [name^="google_ads_iframe"], :root a[href^="https://go.xxxjmp.com"], :root [data-desktop-ad-id], :root [href^="https://wct.link/"], :root div[recirculation-ad-container], :root [href^="https://traffserve.com/"], :root #kt_player > a[target="_blank"], :root [href="https://www.masstortfinancing.com/"] > img, :root .ob_container .item-container-obpd, :root [id^="div-gpt-ad"], :root [href^="https://mypillow.com/"] > img, :root [href^="https://ad.admitad.com/"], :root a[href^="https://u.expresstech.io/"], :root a[href^="https://www.geekbuying.com/dynamic-ads/"], :root a[href^="https://lnkxt.bannerator.com/"], :root [href="https://jdrucker.com/gold"] > img, :root [href^="https://v.investologic.co.uk/"], :root [href^="https://cipledecline.buzz/"], :root a[href^="https://track.ultravpn.com/"], :root [href^="https://goldcometals.com/clk.trk"], :root [data-mobile-ad-id], :root a[href^="https://trk.sportsflix4k.club/"], :root a[href^="https://go.xlivrdr.com"], :root [onclick*="content.ad/"], :root AMP-AD, :root [data-ad-cls], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root [id^="ad-wrap-"], :root div[id^="taboola-stream-"], :root [href^="https://go.astutelinks.com/"], :root a[href^="http://tc.tradetracker.net/"] > img, :root a[href^="http://affiliates.thrixxx.com/"], :root [class^="amp-ad-"], :root [href^="https://affiliate.fastcomet.com/"] > img, :root [class^="adDisplay-module"], :root a[href^="http://go.xtbaffiliates.com/"], :root .grid > .container > #aside-promotion, :root DFP-AD, :root AD-SLOT, :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root [href^="https://click2cvs.com/"], :root .trc_related_container div[data-item-syndicated="true"], :root [href^="http://join.shemalepornstar.com/"], :root a[href^="https://go.xlviiirdr.com"], :root .trc_rbox_div .syndicatedItem, :root a[href^="https://bs.serving-sys.com"], :root [href^="http://residenceseeingstanding.com/"], :root div[data-adunit], :root app-large-ad, :root [href^="https://turtlebids.irauctions.com/"] img, :root [data-ad-module], :root a[href^="https://go.cmtaffiliates.com/"], :root [data-name="adaptiveConstructorAd"], :root [href^="https://optimizedelite.com/"] > img, :root [href^="https://trackfin.asia/"], :root .plistaList > .plista_widget_underArticle_item[data-type="pet"], :root a[href*="//lkstrck2.com/"], :root .plistaList > .itemLinkPET, :root a[href^="https://startgAming.net/tienda/"], :root [href^="https://safer-redirection.com"], :root atf-ad-slot, :root .commercial-unit-mobile-top .jackpot-main-content-container > .UpgKEd + .nZZLFc > div > .vci, :root a[href^="http://partners.etoro.com/"], :root [data-advadstrackid], :root #atvcap + #tvcap > .mnr-c > .commercial-unit-mobile-top, :root a[href^="https://traffdaq.com/"], :root a[href^="https://www.googleadservices.com/pagead/aclk?"], :root a[href^="https://awentw.com/"], :root [class^="div-gpt-ad"], :root [href^="https://www.cloudways.com/en/?id"], :root a[href^="https://refpazkjixes.top/"], :root #mgb-container > #mgb, :root a[href^="https://join.virtuallust3d.com/"], :root #taw > .med + div > #tvcap > .mnr-c:not(.qs-ic) > .commercial-unit-mobile-top, :root [data-adblockkey], :root [data-ez-name] { display: none !important; }</style></head>
+  <body class="appear-animate">
+    
+    <!-- Page Loader Start-->
+    
+    <!--Page Lader End-->
+    <div id="top"></div>
+    <!-- Navigation panel-->
+    <script>
+     function ready(callbackFunction){
+         if(document.readyState != 'loading') {
+             callbackFunction(event)
+         } else {
+             document.addEventListener("DOMContentLoaded", callbackFunction)
+         }
+     }
+     ready(event => {
+         document.querySelector('header').style.display = "block";
+     });
+
+    </script>
+	<header id="header" style="display: block;">
+		<nav class="main-nav dark dark-stick-fixed stick-fixed js-transparent animated headroom--not-bottom slideInDown transparent headroom--top">
+		  <div class="full-wrapper relative">
+			<!-- Logo -->
+			<div class="nav-logo-wrap"><a href="https://programadorwebvalencia.com/" class="logo">Programador<span class="higl">web</span>Valencia</a></div>
+			<!-- Button Navbar -->
+			<div class="navbar-mobile" style="height: 75px; line-height: 75px; width: 75px;"><i class="fa fa-bars"></i></div>
+			<!-- Main Menu-->
+			<div class="inner-nav navbar-desktop" style="display: flex;">
+			  <ul class="clearlist scroll scroll-nav">
+				    <li><a href="https://programadorwebvalencia.com/#contact" style="height: 75px; line-height: 75px;">Contacto</a></li>
+                    <li><a href="https://programadorwebvalencia.com/#service" style="height: 75px; line-height: 75px;">Servicios</a></li>
+                    <li><a href="https://programadorwebvalencia.com/#projects" style="height: 75px; line-height: 75px;">Portafolio</a></li>
+                    <li><a href="https://programadorwebvalencia.com/cursos" style="height: 75px; line-height: 75px;">Cursos</a></li>
+                    <li><a href="https://programadorwebvalencia.com/blog" style="height: 75px; line-height: 75px;">Blog</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+	</header>
+    <!--Start container -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page-lessons" data-lesson="3" data-course="course_php">
+    <div class="separation"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-2">
+                <aside class="aside">
+                    <nav class="aside__nav bg-light aside__nav--small">
+                        <h3 class="aside__title">Lecciones</h3>
+                        <ul class="aside__ul">
+                            
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/base/"><span class="aside__number-lesson"><i data-lesson="1" class="fa fa-book lesson_icon"></i> 1.</span> Base</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/variables/"><span class="aside__number-lesson"><i data-lesson="2" class="fa fa-book lesson_icon"></i> 2.</span> Variables</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link active" href="https://programadorwebvalencia.com/cursos/php/arrays/"><span class="aside__number-lesson"><i data-lesson="3" class="fa fa-book lesson_icon read"></i> 3.</span> Arrays</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/bucles/"><span class="aside__number-lesson"><i data-lesson="4" class="fa fa-book lesson_icon"></i> 4.</span> Bucles</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/condicionales/"><span class="aside__number-lesson"><i data-lesson="5" class="fa fa-book lesson_icon"></i> 5.</span> Condicionales</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/formularios/"><span class="aside__number-lesson"><i data-lesson="6" class="fa fa-book lesson_icon"></i> 6.</span> Formularios</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/funciones/"><span class="aside__number-lesson"><i data-lesson="7" class="fa fa-book lesson_icon"></i> 7.</span> Funciones</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/formularios-2/"><span class="aside__number-lesson"><i data-lesson="8" class="fa fa-book lesson_icon"></i> 8.</span> Formularios 2</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/ficheros/"><span class="aside__number-lesson"><i data-lesson="9" class="fa fa-book lesson_icon"></i> 9.</span> Ficheros</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/e-mails/"><span class="aside__number-lesson"><i data-lesson="10" class="fa fa-book lesson_icon"></i> 10.</span> E-Mails</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/sesiones/"><span class="aside__number-lesson"><i data-lesson="11" class="fa fa-book lesson_icon"></i> 11.</span> Sesiones</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/cookies/"><span class="aside__number-lesson"><i data-lesson="12" class="fa fa-book lesson_icon"></i> 12.</span> Cookies</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/objetos/"><span class="aside__number-lesson"><i data-lesson="13" class="fa fa-book lesson_icon"></i> 13.</span> Objetos</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/bases-de-datos/"><span class="aside__number-lesson"><i data-lesson="14" class="fa fa-book lesson_icon"></i> 14.</span> Bases de datos</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/crud/"><span class="aside__number-lesson"><i data-lesson="15" class="fa fa-book lesson_icon"></i> 15.</span> CRUD</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/paginador/"><span class="aside__number-lesson"><i data-lesson="16" class="fa fa-book lesson_icon"></i> 16.</span> Paginador</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/login/"><span class="aside__number-lesson"><i data-lesson="17" class="fa fa-book lesson_icon"></i> 17.</span> Login</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/registro/"><span class="aside__number-lesson"><i data-lesson="18" class="fa fa-book lesson_icon"></i> 18.</span> Registro</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/api/"><span class="aside__number-lesson"><i data-lesson="19" class="fa fa-book lesson_icon"></i> 19.</span> API</a>
+                                </li>
+                                
+				
+                                
+                                <li>
+                                    <a class="aside__link" href="https://programadorwebvalencia.com/cursos/php/final/"><span class="aside__number-lesson"><i data-lesson="20" class="fa fa-book lesson_icon"></i> 20.</span> Final</a>
+                                </li>
+                                
+				
+                                
+				
+				
+				
+				
+				<li class="divider">
+                                <a href="https://programadorwebvalencia.com/cursos/php/actividades/">
+                                    <i class="fa fa-graduation-cap lesson_icon"></i> Actividades</a>
+				</li>
+				
+                            <li class="divider">
+                                <a href="https://programadorwebvalencia.com/cursos/">
+                                    <i class="fa fa-arrow-left lesson_icon"></i> Otros cursos</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+            </div>
+            <main class="col-md-12 col-lg-10">
+                <h1 class="text-right">Lección 3: Arrays</h1>
+                <h2 id="una-dimensión">Una dimensión</h2>
+
+<p>No es posible almacenar más de un valor en una sola variable, a no ser que utilicemos un <code class="highlighter-rouge">array</code>.</p>
+
+<p>Un <code class="highlighter-rouge">array</code> es un mapa ordenado donde los datos tendrán una clave (<code class="highlighter-rouge">key</code>) pero muchos valores (<code class="highlighter-rouge">values</code>). Por ejemplo, podríamos guardar los días de la semana bajo el mismo nombre de variable.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$semana</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Lunes'</span><span class="p">,</span>
+    <span class="s1">'Martes'</span><span class="p">,</span>
+    <span class="s1">'Miércoles'</span><span class="p">,</span>
+    <span class="s1">'Jueves'</span><span class="p">,</span>
+    <span class="s1">'Viernes'</span><span class="p">,</span>
+    <span class="s1">'Sábado'</span><span class="p">,</span>
+    <span class="s1">'Domingo'</span>
+<span class="p">];</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>Los valores están dentro de corchetes (<code class="highlighter-rouge">[]</code>) separados por comas. De esta formar se asigna automáticamente un marcador que empieza por cero. Si quiero leer por separado cada elemento debo asignar el marcador envuelto en corchetes.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="k">echo</span> <span class="nv">$semana</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// Lunes</span>
+<span class="k">echo</span> <span class="nv">$semana</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> <span class="c1">// Jueves</span>
+<span class="k">echo</span> <span class="nv">$semana</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span> <span class="c1">// Domingo</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>Si quiero ver todo el contenido puedo usar la función nativa de PHP <code class="highlighter-rouge">var_dump</code>. Nos dirá la longitud del <code class="highlighter-rouge">array</code>, la posición de cada elemento, su tipo, longitud de cada valor y el propio valor que almacena.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$semana</span><span class="p">);</span>
+
+<span class="cm">/*
+array(7) {
+  [0] =&gt;
+  string(5) "Lunes"
+  [1] =&gt;
+  string(6) "Martes"
+  [2] =&gt;
+  string(10) "Miércoles"
+  [3] =&gt;
+  string(6) "Jueves"
+  [4] =&gt;
+  string(7) "Viernes"
+  [5] =&gt;
+  string(7) "Sábado"
+  [6] =&gt;
+  string(7) "Domingo"
+}
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p class="advice"><code class="highlighter-rouge">var_dump</code> no necesita añadir un <code class="highlighter-rouge">echo</code> delante.</p>
+
+<p class="advice">Usa <code class="highlighter-rouge">var_dump</code> en lugar de <code class="highlighter-rouge">print_r</code>, proporciona más información.</p>
+
+<p>Dentro de un array puede existir cualquier tipo, al igual que una variable.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$corteIngles</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Azul'</span><span class="p">,</span>
+    <span class="mi">39</span><span class="p">,</span>
+    <span class="kc">True</span><span class="p">,</span>
+    <span class="mi">11</span>
+<span class="p">];</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<h3 id="crear">Crear</h3>
+
+<p>Para declarar un <code class="highlighter-rouge">array</code> vacío solamente debemos crear una variable donde asignemos unos corchetes.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$planetas</span> <span class="o">=</span> <span class="p">[];</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p class="advice">También lo puedes crear con su función: <code class="highlighter-rouge">$planetas = array();</code>.</p>
+
+<h3 id="añadir">Añadir</h3>
+
+<p>Y para ir añadiendo elementos.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$planetas</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">'Marte'</span><span class="p">;</span>
+<span class="nv">$planetas</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">'Tierra'</span><span class="p">;</span>
+<span class="nv">$planetas</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">'Venus'</span><span class="p">;</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$planetas</span><span class="p">);</span>
+
+<span class="cm">/*
+array(3) {
+  [0] =&gt;
+  string(5) "Marte"
+  [1] =&gt;
+  string(6) "Tierra"
+  [2] =&gt;
+  string(5) "Venus"
+}
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>Y si queremos utilizar un método más orientado a la programación funcional, podemos usar <code class="highlighter-rouge">array_merge</code> para crear un nuevo <code class="highlighter-rouge">array</code>.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="c1">// Array de partida</span>
+<span class="nv">$planetas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Marte'</span><span class="p">,</span> <span class="s1">'Tierra'</span><span class="p">,</span> <span class="s1">'Venus'</span><span class="p">];</span>
+
+<span class="c1">// Añadimos 'Mercurio'</span>
+<span class="nv">$nuevosPlanetas</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">(</span><span class="nv">$planetas</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Mercurio'</span><span class="p">]);</span>
+
+<span class="c1">// Vemos el resultado</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$nuevosPlanetas</span><span class="p">);</span>
+
+<span class="cm">/*
+array(4) {
+  [0]=&gt;
+  string(5) "Marte"
+  [1]=&gt;
+  string(6) "Tierra"
+  [2]=&gt;
+  string(5) "Venus"
+  [3]=&gt;
+  string(8) "Mercurio"
+}
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>Una utilidad muy práctica para saber la longitud de un <code class="highlighter-rouge">array</code> es usar la funcion <code class="highlighter-rouge">count()</code>.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$planetas</span><span class="p">);</span>
+<span class="c1">// 3</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p><a href="https://programadorwebvalencia.com/cursos/php/actividades/#2-1" class="activity">2-1</a></p>
+
+<h3 id="modificar">Modificar</h3>
+
+<p>Para cambiar un valor hay que indicar la posición y el nuevo valor a introducir. ¿Recuerdas que el símbolo <code class="highlighter-rouge">=</code> es en realidad <code class="highlighter-rouge">←</code>?</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$planetas</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Saturno'</span><span class="p">;</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<h3 id="borrar">Borrar</h3>
+
+<p>Eliminar un elemento es un poco más marciano, debes usar una función nativa llamada <code class="highlighter-rouge">unset</code>. Personalmente creo que ha sido creada por un ser malvado. Me explico.</p>
+
+<p>Supongamos que quiero destruir la Tierra antes de que lo haga el hombre. Es el 2º elemento, cuya posición es la 1.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nb">unset</span><span class="p">(</span><span class="nv">$planetas</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>Veamos que ha pasado.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$planetas</span><span class="p">);</span>
+<span class="cm">/*
+array(2) {
+  [0] =&gt;
+  string(5) "Marte"
+  [2] =&gt;
+  string(5) "Venus"
+}
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>Se ha ido… pero ¡me ha desordenado las posiciones! Intentamos hacer un <code class="highlighter-rouge">Ctrl+Z</code> añadiendo la Tierra de nuevo.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="c1">// Añado</span>
+<span class="nv">$planetas</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">'Tierra'</span><span class="p">;</span>
+<span class="c1">// Muestro todo</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$planetas</span><span class="p">);</span>
+<span class="cm">/*
+array(2) {
+  [0] =&gt;
+  string(5) "Marte"
+  [2] =&gt;
+  string(5) "Venus"
+  [3] =&gt;
+  string(6) "Tierra"
+}
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>Como dijo Jack Swigert en el Apolo 13: “-Houston, tenemos un problema-“. Nuestro <code class="highlighter-rouge">array</code> pierde la posición que borramos para siempre. En realidad no es un problema porque la gran mayoría de las ocasiones lo recorreremos con un bucle (<code class="highlighter-rouge">loop</code>) e ignoraremos las posiciones, pero debes ser consciente de como funciona para no encontrarte sorpresas.</p>
+
+<p>No obstante siempre puedes ignorar mis palabras y ordenarlo creando un nuevo array con un <code class="highlighter-rouge">loop</code> malgastando recursos.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="c1">// Elimino la Tierra</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$planetas</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="c1">// Declaro mi nuevo array</span>
+<span class="nv">$planetasSinTierra</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="c1">// Lo asigno elemento por elemento</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$planetas</span> <span class="k">as</span> <span class="nv">$posicion</span> <span class="o">=&gt;</span> <span class="nv">$nombre</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$planetasSinTierra</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$nombre</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p><a href="https://programadorwebvalencia.com/cursos/php/actividades/#2-2" class="activity">2-2</a></p>
+
+<h3 id="jugando-con-strings">Jugando con Strings</h3>
+
+<p>Observa y dime que ocurre.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$palabra</span> <span class="o">=</span> <span class="s1">'abcdef'</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$palabra</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="c1">// c</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>¿Qué ha pasado? Pues que los <code class="highlighter-rouge">string</code> pueden ser manipulados igual que un <code class="highlighter-rouge">array</code>.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$palabra</span> <span class="o">=</span> <span class="s1">'abcdef'</span><span class="p">;</span>
+<span class="nv">$palabra</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Z'</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$palabra</span><span class="p">;</span>
+<span class="c1">// abZdef</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p class="advice">Un <code class="highlighter-rouge">string</code> se comporta como un <code class="highlighter-rouge">array</code> porque en el fondo no existen las palabras en la programación, sino <strong>conjuntos de carácteres</strong>. Dicho de otra manera: un <code class="highlighter-rouge">string</code> es un <code class="highlighter-rouge">array</code> de muchas letras.</p>
+
+<h3 id="convertir-un-string-en-un-array">Convertir un String en un Array</h3>
+
+<p>En algún momento tendrás la necesidad de pasar un texto a un <code class="highlighter-rouge">array</code> por medio de algún separador. Por ejemplo, transformar <strong>una frase a array dividido por espacios</strong>. Te dejo un ejemplo para realizarlo. El secreto esta en usar <strong>preg_split</strong>.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$frase</span> <span class="o">=</span> <span class="s1">'En un lugar de la mancha'</span><span class="p">;</span>
+<span class="nv">$arrayDeFrase</span> <span class="o">=</span> <span class="nb">preg_split</span><span class="p">(</span><span class="s1">'/[\s,]+/'</span><span class="p">,</span> <span class="nv">$frase</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$arrayDeFrase</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="c1">// "lugar"</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$arrayDeFrase</span><span class="p">);</span>
+<span class="cm">/*
+array(6) {
+  [0] =&gt;
+  string(2) "En"
+  [1] =&gt;
+  string(2) "un"
+  [2] =&gt;
+  string(5) "lugar"
+  [3] =&gt;
+  string(2) "de"
+  [4] =&gt;
+  string(2) "la"
+  [5] =&gt;
+  string(6) "mancha"
+}
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p class="advice">No uses <strong>split()</strong>, la función esta OBSOLETA desde la versión 5.3.0. y ha sido ELIMINADA en la versión 7.0.0.</p>
+
+<p><a href="https://programadorwebvalencia.com/cursos/php/actividades/#2-3" class="activity">2-3</a></p>
+
+<h2 id="diccionario">Diccionario</h2>
+
+<p>Las claves (<code class="highlighter-rouge">key</code>) pueden ser definidas por nosotros. A esto se le denomina <strong>diccionario</strong>.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$empleados</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Juan'</span> <span class="o">=&gt;</span> <span class="mi">34</span><span class="p">,</span>
+    <span class="s1">'Luisa'</span> <span class="o">=&gt;</span> <span class="mi">56</span>
+<span class="p">];</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>Para <strong>leer</strong> será de la misma forma, salvo que ya no tenemos posiciones sino nuestras propias claves.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="k">echo</span> <span class="nv">$empleados</span><span class="p">[</span><span class="s1">'Luisa'</span><span class="p">];</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>A la hora de <strong>añadir</strong> tendrás que indicar directamente el nombre que quieras darle.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$empleados</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nv">$empleados</span><span class="p">[</span><span class="s1">'Manolo'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$empleados</span><span class="p">);</span>
+<span class="cm">/*
+array(1) {
+  'Manolo' =&gt;
+  int(99)
+}
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p><strong>Modificar</strong> será igual, indicando la clave.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$empleados</span><span class="p">[</span><span class="s1">'Manolo'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$empleados</span><span class="p">);</span>
+<span class="cm">/*
+array(1) {
+  'Manolo' =&gt;
+  int(11)
+}
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>Y borrar de la misma forma que un <code class="highlighter-rouge">array</code>.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$empleados</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nv">$empleados</span><span class="p">[</span><span class="s1">'Manolo'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span>
+<span class="nv">$empleados</span><span class="p">[</span><span class="s1">'Juan'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$empleados</span><span class="p">);</span>
+<span class="cm">/*
+array(2) {
+  'Manolo' =&gt;
+  int(99)
+  'Juan' =&gt;
+  int(99)
+}
+*/</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$empleados</span><span class="p">[</span><span class="s1">'Manolo'</span><span class="p">]);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$empleados</span><span class="p">);</span>
+<span class="cm">/*
+array(1) {
+  'Juan' =&gt;
+  int(99)
+}
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p><a href="https://programadorwebvalencia.com/cursos/php/actividades/#2-4" class="activity">2-4</a></p>
+
+<h2 id="dos-dimensiones">Dos dimensiones</h2>
+
+<p>Al principio de la lección dije que se podía añadir dentro de un <code class="highlighter-rouge">array</code> cualquier elemento, incluso… podríamos rizar el rizo insertando… ¡Otro <code class="highlighter-rouge">array</code>! A esto se le llama <strong>array de dos dimensiones</strong>, cuando un <code class="highlighter-rouge">array</code> tiene dentro otro <code class="highlighter-rouge">array</code>.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$rizo</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[]</span>
+<span class="p">]</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$rizo</span><span class="p">);</span>
+<span class="cm">/*
+array(1) {
+  [0] =&gt;
+  array(0) {
+  }
+}
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>Tiene infinidad de usos. Pensemos que has heredado de un tio rico una tienda de ropa. Cada producto tiene su propio código de barras, precio, nombre, color y género.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nv">$zara</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">123</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Camisa a cuadros'</span><span class="p">,</span>
+      <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">29.95</span><span class="p">,</span>
+      <span class="s1">'sexo'</span> <span class="o">=&gt;</span> <span class="s1">'Hombre'</span>
+    <span class="p">],</span>
+    <span class="mi">234</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Falda manga'</span><span class="p">,</span>
+      <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mf">19.95</span><span class="p">,</span>
+      <span class="s1">'sexo'</span> <span class="o">=&gt;</span> <span class="s1">'Mujer'</span>
+    <span class="p">],</span>
+    <span class="mi">345</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="s1">'nombre'</span> <span class="o">=&gt;</span> <span class="s1">'Bolso minúsculo'</span><span class="p">,</span>
+      <span class="s1">'precio'</span> <span class="o">=&gt;</span> <span class="mi">50</span><span class="p">,</span>
+      <span class="s1">'sexo'</span> <span class="o">=&gt;</span> <span class="s1">'Mujer'</span>
+    <span class="p">]</span>
+<span class="p">];</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$zara</span><span class="p">);</span>
+<span class="cm">/*
+array(3) {
+  [123] =&gt;
+  array(3) {
+    'nombre' =&gt;
+    string(16) "Camisa a cuadros"
+    'precio' =&gt;
+    double(29.95)
+    'sexo' =&gt;
+    string(6) "Hombre"
+  }
+  [234] =&gt;
+  array(3) {
+    'nombre' =&gt;
+    string(11) "Falda manga"
+    'precio' =&gt;
+    double(19.95)
+    'sexo' =&gt;
+    string(5) "Mujer"
+  }
+  [345] =&gt;
+  array(3) {
+    'nombre' =&gt;
+    string(16) "Bolso minúsculo"
+    'precio' =&gt;
+    int(50)
+    'sexo' =&gt;
+    string(5) "Mujer"
+  }
+}
+
+*/</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+<p>El mecanismo para gestionarlo es igual al diccionario salvo que debemos ir nodo por nodo.</p>
+
+<div class="language-php highlighter-rouge" data-language="php"><div class="highlight"><pre class="highlight"><code><span class="k">echo</span> <span class="nv">$zara</span><span class="p">[</span><span class="mi">345</span><span class="p">][</span><span class="s1">'nombre'</span><span class="p">];</span>
+<span class="c1">// Bolso minúsculo</span>
+</code></pre></div><div class="highlighter-rouge__clipboard"></div></div>
+
+                <nav>
+                    
+  
+
+                    
+                        <div class="nav-prev">
+                            <a href="https://programadorwebvalencia.com/cursos/php/variables/">
+                                <i class="fa fa-angle-left"></i> Anterior
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="nav-next">
+                            <a href="https://programadorwebvalencia.com/cursos/php/bucles/">
+                                Siguiente <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    
+                </nav>
+                <section class="license-nc-nd">
+	<p class="license-nc-nd__text">
+		Esta obra está bajo una <a class="license-nc-nd__link" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional.</a>
+	</p>
+	<p class="license-nc-nd__content-img">
+		<img class="license-nc-nd__img" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/cc-licencia.png" alt="Atribución/Reconocimiento-NoComercial-SinDerivados 4.0 Internacional">
+	</p>
+</section>
+
+                <!-- Newsletter -->
+<section class="newsletter">
+    <h2>Newsletter con una prueba técnica cada semana 📨</h2>
+    <div class="newsletter__columns">
+        <h3 class="newsletter__subtitle"><strong>Infinita recursión</strong> es un reto semanal solo apto para devs que quieran seguir aumentando sus habilidades 🚀 como desarrollador 🦾. Recibe recurrentemente una prueba técnica nueva con explicaciones y algunas secciones especiales como algoritmos famosos, arquitecturas o protocolos.</h3>
+        <iframe scrolling="no" style="width:100%!important;height:220px;border:1px #ccc solid !important" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/infinita-recursion.html"></iframe>
+    </div>
+</section>
+
+                <!-- Donation -->
+<section class="donation">
+    <h2 class="donation__title">¿Me ayudas?</h2>
+    <p>No te sientas obligado a realizarme una donación, pero cada aportación me <strong>ayuda a mantener el sitio en activo</strong> para que <strong>continúe existiendo</strong> y me motiva a <strong>continuar creando nuevo contenido</strong>.</p>
+    <div class="donation__content">
+        <!-- Donation -->
+<a class="donation__button" href="https://ko-fi.com/androsfenollosa" target="_blank">
+	<figure>
+		<img src="./Lección 3_ Arrays _ Curso PHP 8.x_files/qrcode.png" alt="Comprame un café">
+		<figcaption class="donation__figcaption">Pulsa sobre la imagen</figcaption>
+	</figure>
+</a>
+
+        <ul class="donation__list">
+            <li><strong>1 café</strong>: Se mantiene el dominio durante 4 meses. </li>
+            <li><strong>2 cafés</strong>: Se liquida 1 mes del Servidor Web.</li>
+            <li><strong>3 cafés</strong>: Se paga 1 mes de <em>Newsletter</em>.</li>
+        </ul>
+    </div>
+</section>
+
+                
+<link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/mobile.css" rel="stylesheet" media="all and (max-width: 600px)">
+<link href="./Lección 3_ Arrays _ Curso PHP 8.x_files/desktop.css" rel="stylesheet" media="all and (min-width: 600px)">
+<script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/vue.min.js.descargar"></script>
+<script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/axios.min.js.descargar"></script>
+<script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/ramda.min.js.descargar"></script>
+<script defer="" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/comments.js.descargar"></script>
+
+<section class="section-comments">
+
+    <h2>Comentarios <i class="icon-chat"></i></h2>
+
+    <div id="app-comments" class="comments"><div class="comments__header"><div><button class="button comments-header__button-plus"><img alt="Añadir comentario" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/add-outline.svg" class="comments-header__button-plus-img"></button></div> <p class="comments-header__count">
+                5 comentarios
+            </p></div> <div class="new-comment"><div class="new-comment__position"><div class="new-comment__header"><div><button class="button new-comment__button-close"><img alt="Cerrar" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/close.svg" class="new-comment__button-plus-img"></button></div> <p class="new-comment__title">
+                        Nuevo comentario
+                    </p></div> <form><p><input maxlength="20" type="text" placeholder="* Nombre" class="new-comment__input new-comment__author"></p> <p><input maxlength="255" type="email" placeholder="Email (¿quieres ser notificado?)" class="new-comment__input new-comment__email"></p><p><textarea placeholder="* Mensaje" class="new-comment__input new-comment__content"></textarea></p> <div class="switch-button-policy"><input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox"> <label for="switch-label" class="switch-button__label"></label> <span class="switch-button-policy__text">Acepto la política de <a href="https://programadorwebvalencia.com/aviso-legal/" class="switch-button-policy__link">Protección de Datos</a>.</span></div> <p class="new-comment__content-submit"><button type="button" disabled="disabled" class="new-comment__submit"><span>Publicar</span></button></p></form></div></div> <div class="comments__list"><div class="comment"><div class="comment__header"><div class="comment__create-at">
+                2/6/2020
+            </div> <div class="comment__author">
+                Alex Rivas
+            </div> <button class="button comment__reply"><img alt="Replicar" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/reply.svg" class="comment__reply-img"></button></div> <hr class="comment__line"> <div class="comment__content">Genial, he recordado y aprendido  !!!!</div> </div><div class="comment"><div class="comment__header"><div class="comment__create-at">
+                24/5/2021
+            </div> <div class="comment__author">
+                william Correa
+            </div> <button class="button comment__reply"><img alt="Replicar" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/reply.svg" class="comment__reply-img"></button></div> <hr class="comment__line"> <div class="comment__content">Gracias Andros por tus aportes a los que deseamos aprender PHP, me gustaría actualizar un dato respecto "Actividad 2-1 (Nos vamos de viaje)" , en la cual sugieres utilizar la estructura "$amigos[array_rand($amigos)]". hay una actualizacion reciente del array_rand, quedando así.
+
+ https://www.php.net/manual/es/function.array-rand.php.
+Bueno espero no molestarte ya que, mi intención es que las personas que como yo se han visto tan beneficiadas de tus conocimientos podamos crecer tambien un poco más. Un abrazo y me gusta mucho tu curso.</div> <div class="comment comment--child"><div class="comment__header"><div class="comment__create-at">
+                24/5/2021
+            </div> <div class="comment__author">
+                Andros
+            </div> <button class="button comment__reply"><img alt="Replicar" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/reply.svg" class="comment__reply-img"></button></div> <hr class="comment__line"> <div class="comment__content">Hola William, todo feedback es bien recibido. Después de meditarlo no voy a incorporar la solución que me propones, ni la mía tampoco 😄. Ambas pecan en complejidad, se pueden resolver los últimos puntos usando la sencilla shuffle. Gracias por dar el paso. Un saludo.</div> </div></div><div class="comment"><div class="comment__header"><div class="comment__create-at">
+                18/8/2022
+            </div> <div class="comment__author">
+                Angel GD
+            </div> <button class="button comment__reply"><img alt="Replicar" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/reply.svg" class="comment__reply-img"></button></div> <hr class="comment__line"> <div class="comment__content">Hola, gracias por tus aportes, recién voy empezando, 
+el reto  de crear una lista con join() no lo pude hacer, lo conseguí con un foreach, mi pregunta si se puede hacer con la función join() ?</div> <div class="comment comment--child"><div class="comment__header"><div class="comment__create-at">
+                1/9/2022
+            </div> <div class="comment__author">
+                Andros
+            </div> <button class="button comment__reply"><img alt="Replicar" src="./Lección 3_ Arrays _ Curso PHP 8.x_files/reply.svg" class="comment__reply-img"></button></div> <hr class="comment__line"> <div class="comment__content">Hola Ángel, ¿me puedes dar más información? ¿Qué actividad?</div> </div></div></div></div>
+</section>
+
+<!-- Template comment  -->
+<template id="comment"></template>
+<!-- End template comment -->
+
+
+
+            </main>
+        </div>
+    </div>
+</div>
+
+    <!--Finish container -->
+    <!-- Page Footer Start-->
+    <footer class="page-footer">
+      <div class="container text-center">
+        <div class="social-links">
+          <a href="https://twitter.com/androsfenollosa" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+          
+          <a href="https://programadorwebvalencia.com/feed/index.xml" title="RSS" target="_blank"><i class="fa fa-rss"></i></a>
+          <a href="https://t.me/programadorwebvalencia" title="Telegram" target="_blank"><i class="fa fa-telegram"></i></a>
+          <a href="https://github.com/tanrax/" title="Github" target="_blank"><i class="fa fa-github-alt"></i></a>
+        </div>
+        <div class="copy-right mt-50">
+            <a href="https://programadorwebvalencia.com/aviso-legal">Aviso legal</a>
+            <p class="alt-font">Programador web Valencia 2023</p>
+            <p>Andros Fenollosa</p>
+        </div>
+      </div>
+      <div class="footer--button-up">
+          <a href="https://programadorwebvalencia.com/cursos/php/arrays/#top" class="scroll scroll-to-top"><i class="fa fa-angle-up"></i></a>
+      </div>
+    </footer>
+    <!-- Page footer end -->
+    <!--JS sctipts-->
+    <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/jquery-2.1.3.min.js.descargar"></script>
+    <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/headroom.min.js.descargar"></script>
+    <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/plagins.js.descargar"></script>
+    <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/isotope.pkgd.min.js.descargar"></script>
+    <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/jquery.magnific-popup.min.js.descargar"></script>
+    <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/jquery.fitvids.js.descargar"></script>
+    <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/typed.min.js.descargar"></script>
+    <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/delighters.min.js.descargar"></script>
+    <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/jquery.particleground.min.js.descargar"></script>
+    <script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/main.js.descargar"></script>
+    
+	
+<script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/resizable.js.descargar"></script>
+
+<script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/lessons.js.descargar"></script>
+
+<script src="./Lección 3_ Arrays _ Curso PHP 8.x_files/code.js.descargar"></script>
+
+
+  
+
+</body></html>

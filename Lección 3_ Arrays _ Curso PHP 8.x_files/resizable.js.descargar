@@ -1,0 +1,49 @@
+function makeResizable(selector) {
+  document.querySelectorAll(selector).forEach(function (element) {
+    const resizer = element.querySelector(".resizable__control");
+    const minimum_size = 20;
+    let original_width = 0;
+    let original_x = 0;
+    let original_mouse_x = 0;
+
+    function eventResizeElement (e) {
+      e.preventDefault();
+      original_width = parseFloat(
+          getComputedStyle(element, null)
+              .getPropertyValue("width")
+              .replace("px", "")
+      );
+      original_height = parseFloat(
+          getComputedStyle(element, null)
+              .getPropertyValue("height")
+              .replace("px", "")
+      );
+      original_x = element.getBoundingClientRect().left;
+      original_mouse_x = e.pageX;
+      window.addEventListener("mousemove", resize);
+      window.addEventListener("touchmove", resize);
+      window.addEventListener("mouseup", stopResize);
+      window.addEventListener("touchend", stopResize);
+    }
+
+    function resize(e) {
+      if (resizer.classList.contains("resizable__control")) {
+        const width = original_width + (e.pageX - original_mouse_x);
+        if (width > minimum_size) {
+          element.style.width = width + "px";
+        }
+      }
+    }
+
+    function stopResize() {
+      window.removeEventListener("mousemove", resize);
+      window.removeEventListener("touchmove", resize);
+    }
+
+    resizer.addEventListener("mousedown", eventResizeElement);
+    resizer.addEventListener("touchstart", eventResizeElement);
+  });
+}
+
+// Run
+makeResizable(".resizable");
