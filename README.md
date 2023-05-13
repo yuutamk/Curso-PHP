@@ -362,7 +362,7 @@ Operador Descripción
 
 .=	Concatenación
 
-### [Otros operadores](../Samples/otros-operadores.php)
+### [Otros operadores](Samples/otros-operadores.php)
 
 PHP también posee otros operadores importantes y muy usados como los de asignación, incremento/decremento y concatenación.
 
