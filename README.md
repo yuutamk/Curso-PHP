@@ -1,4 +1,4 @@
-# Curso-PHP
+# Curso PHP
 # ¿Que es PHP?
 
 PHP es un lenguaje de scripting de uso general que es especialmente adecuado para el desarrollo web.
@@ -334,7 +334,7 @@ $sabe_volar || $tiene_2_patas; // false
 
 <img src="https://i.ibb.co/g3b7RdL/operadores-aritmeticos.jpg" alt="operadores-aritmeticos" border="0">
 
-### [Sample Operadores aritmeticos](../Samples/operadores-aritmeticos.php)
+### [Sample Operadores aritmeticos](./Samples/operadores-aritmeticos.php)
 
 # Operadores Relacionales
 
@@ -362,7 +362,7 @@ Operador Descripción
 
 .=	Concatenación
 
-### [Otros operadores](Samples/otros-operadores.php)
+### [Otros operadores](./Samples/otros-operadores.php)
 
 PHP también posee otros operadores importantes y muy usados como los de asignación, incremento/decremento y concatenación.
 
@@ -486,7 +486,7 @@ echo "\n"; # Salto de línea
 # Carlos Santana
 ```
 
-### [Precedencia](../Samples/precedencia.php)
+### [Precedencia](./Samples/precedencia.php)
 
 En pocas palabras, la precedencia de operadores es cuando el lenguaje nos dice qué operación pasará primero y qué operación pasará después de acuerdo al operador. Por ejemplo:
 
