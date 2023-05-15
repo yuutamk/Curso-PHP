@@ -722,3 +722,129 @@ switch( $michi ){
 echo "\n";
 ```
 
+# Bucles
+
+# While
+
+![](../MD/Resources/img/que_es_bucle.png)
+
+![](../MD/Resources/img/como_funciona_while.png)
+
+![](../MD/Resources/img/sintaxis_while.png)
+
+Ejemplo:
+
+```php
+<?php
+
+$contador = 1;
+$maximo = 10;
+
+while ($contador <= $maximo) {
+    echo "el contador está en {$contador}\n";
+    $contador++;
+}
+```
+
+# Do While
+
+![](../MD/Resources/img/ciclo_do_while.png)
+
+![](../MD/Resources/img/sintaxis_do_while.png)
+
+Ejemplo:
+
+```php
+<?php 
+$usernames = ["salem", "atzin"];
+do {
+    $username = readline("Ingresa tú nombre de usuario: ");
+} 
+while (in_array($username, $usernames));
+    echo "Hola $username";
+?>
+```
+# Ciclo FOR
+
+![](../MD/Resources/img/ciclo_for.png)
+
+![](../MD/Resources/img/sintaxis_ciclo_for.png)
+
+Ejemplo:
+```php
+<?php
+$michis = array (
+    "MichiJuan",
+    "MichiBerto",
+    "Mr.Michi",
+    "MichiMouse",
+    "PepeMichi",
+    "MichiMan",
+    "MichiMe",
+);
+for ($i=0; $i <= count($michis) - 1 ; $i++) {     
+    echo $i . "- " . $michis[$i] . "\n";
+}
+?>
+```
+# Ciclo Foreach
+
+![](../MD/Resources/img/ciclo_foreach.png)
+
+![](../MD/Resources/img/sintaxis_foresach.png)
+
+Ejemplo:
+
+```php
+<?php
+
+    $cafes=array(
+        "Capuccino"=>50,
+        "Latte"=>45,
+        "Americano"=>40,
+        "Te chai"=>45
+    );
+
+    echo"\n\t Lista de cafés y precios:";
+    foreach($cafesas$tipo => $costo){
+        echo"\n\t El café $tipo cuesta: $$costo";
+    }
+    
+    $cafe=readline("\nEscribe un cafe para buscarlo: ");
+
+    foreach($cafesas$tipo => $costo){
+        if($tipo == $cafe){
+            echo"\n\t Café tipo: $tipo encontrado";
+            echo"\n\t Costo: $$costo";
+            break;
+        }
+    }
+
+    echo"\n\n";
+
+?>
+```
+
+![](../MD/Resources/img/sintaxis_foreach_llave.png)
+
+Ejemplo:
+
+```php
+<?php
+
+$tiendita_de_cafes = array(
+    "Americano" => 20,
+    "Latte" => 25,
+    "Capuccino" => 27.5,
+    "Mocca" => 24
+);
+
+foreach ($tiendita_de_cafes as $cafe => $price)
+    echo "El café $cafe cuesta $$price USD \n";
+
+
+echo "\n";
+?>
+```
+
+
