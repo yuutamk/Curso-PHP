@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # Curso-PHP
-=======
+
 # Curso PHP
 # ¿Que es PHP?
 
@@ -724,4 +724,4 @@ switch( $michi ){
 
 echo "\n";
 ```
->>>>>>> e8647ba4468fe796105d2a480a1ba141fc76113e
+
