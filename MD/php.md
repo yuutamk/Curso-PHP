@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Curso-PHP
-=======
-# Curso PHP
 # ¿Que es PHP?
 
 PHP es un lenguaje de scripting de uso general que es especialmente adecuado para el desarrollo web.
@@ -32,24 +28,25 @@ El 30% de los sitios de todo internet están construidos con WordPress (el CMS d
 Toda nuestra aplicación está guardada en un servidor, el cual entrega una copia de  a misma a cada cliente que la solicite.
 
 Además, el servidor también se encarga de responder cada solicitud del usuario.
-<img src="https://i.ibb.co/SwSMSnw/cliente-servidor.jpg" alt="cliente-servidor" border="0">
 
+![](./Resources/img/cliente%20servidor.png)
 
 ## Servidor físico o VPS
 Es la computadora que se encarga de guardar tu página web y mantener accesible 24/7. Se le conoce como servidor y siempre está conectado a internet.
 
 A través de él podemos definir ciertas reglas de seguridad para nuestra página.
-<img src="https://i.ibb.co/LN4dY5b/servidor-fisico-y-vps.jpg" alt="servidor-fisico-y-vps" border="0">
+
+![](./Resources/img/servidor%20fisico%20y%20vps.jpg)
 
 ## Servidor web
 Es un programa que corre dentro de nuestro servidor físico y se encarga de gestionar cualquier petición que llegue al mismo.
 
 Esta petición es procesada por algún lenguaje de programación y al final devuelve una respuesta.
 
-<img src="https://i.ibb.co/yRHN1wR/servidor-web.png" alt="servidor-web" border="0">
+![](./Resources/img/servidor%20web.png)
 
 ## Métodos HTTP
-<img src="https://i.ibb.co/k55n3pn/metodos-HTTP.jpg" alt="metodos-HTTP" border="0">
+![](./Resources/img/metodosHTTP.jpeg)
 
 Los métodos HTTP son una forma de comunicación entre el cliente y el navegador. A través de una solicitud HTTP el cliente es capaz de pedirle al servidor que realice una acción
 
@@ -72,7 +69,7 @@ Este método lo usamos para eliminar un recurso del servidor. Por ejemplo, podem
 
 Esto no significa que dejamos eliminarlo necesariamente dentro de nuestra base de datos, podemos hacer un “Soft delete”.
 
-<img src="https://i.ibb.co/xfNx8rW/HTTP.jpg" alt="HTTP" border="0">
+![](./Resources/img/HTTP.jpg)
 
 # Sintaxis
 
@@ -85,7 +82,7 @@ combinatoria de constituyentes sintácticos y la
 formación de unidades superiores a estos, como
 los sintagmas y Ias oraciones gramaticales."
 
-<img src="https://i.ibb.co/LtR3SFL/wazowski-OK500.png" alt="wazowski-OK500" border="0">
+![|100](./Resources/img/wazowskiOK500.png)
 
 # en palabras más sencillas...
 Son las reglas que dictan cómo se debe estructurar un lenguaje para que tenga sentido lo que decimos.
@@ -110,7 +107,7 @@ echo "No, no. Yo me llamo " . $nombre ." ". $apellido
 
 Resultado:
 
-<img src="https://i.ibb.co/F7qD2sN/Sintaxis1-php.png" alt="Sintaxis1-php" border="0">
+![](./Resources/img/Sintaxis1-php.png)
 
 ## Ejemplo de operaciones:
 
@@ -132,7 +129,7 @@ echo "El resultado de 4 x 5 es: " . 4*5;
 ```
 Resultado:
 
-<img src="https://i.ibb.co/m0S46HS/Resultado4x5.png" alt="Resultado4x5" border="0">
+![](./Resources/img/Resultado4x5.png)
 
 # Variables y Constantes
 
@@ -148,7 +145,7 @@ Es algo que nunca cambia, es decir, una vez que se le asigne un valor ya no  es 
 
 Una constante siempre mantendrá su valor intacto desde el momento en que se declara.
 
-<img src="https://i.ibb.co/7JNRjgr/variables.png" alt="variables" border="0">
+![](./Resources/img/variables.png)
 
 # Tipos de datos
 
@@ -194,7 +191,7 @@ echo$cadena + $numero, PHP_EOL;
 
 **Resultado:**
 
-<img src="https://i.ibb.co/CHt7L7p/String-num.png" alt="String-num" border="0">
+![](./Resources/img/String%2Bnum.png)
 
 # Casting
 ## ¿Qué es eI casting?
@@ -215,7 +212,7 @@ var_dump( $numerito );
 
 Resultado:
 
-<img src="https://i.ibb.co/yRVQZ48/casting.png" alt="casting" border="0">
+![](./Resources/img/casting.png)
 
 ## Reto!!
 
@@ -256,7 +253,7 @@ En la mayoria de sus usos se necesitan al menos dos afirmaciones y un operador:
 
 ## **Y (And)**
 
-<img src="https://i.ibb.co/2cv2hdz/Tabla.png" alt="Tabla" border="0">
+![](./Resources/img/Tabla%26%26.png)
 
 Se usa para verificar si dos afirmaciones son ciertas. Si ambas afirmaciones son ciertas, entonces la oración completa es cierta. Si una de ellas es falsa, entonces la oracion completa es falsa.
 
@@ -272,7 +269,7 @@ echo '<br>';
 
 ## **O (or)**
 
-<img src="https://i.ibb.co/ySrF6bR/Tabla-OR.png" alt="Tabla-OR" border="0">
+![](./Resources/img/Tabla_OR.png)
 
 Se usa para verificar si al menos una afirmación es cierta.
 Si al menos una de ellas es cierta, entonces la oración es cierta, de lo contrario, es falsa.
@@ -289,7 +286,7 @@ echo '<br>';
 
 ## **No (Not)**
 
-<img src="https://i.ibb.co/KDJC85R/Tabla-NOT.png" alt="Tabla-NOT" border="0">
+![](./Resources/img/Tabla_NOT.png)
 
 Se usa para invertir el valor de una afirmación.
 
@@ -335,16 +332,16 @@ $sabe_volar || $tiene_2_patas; // false
 ```
 # Operadores aritmeticos
 
-<img src="https://i.ibb.co/g3b7RdL/operadores-aritmeticos.jpg" alt="operadores-aritmeticos" border="0">
+![](./Resources/img/operadores%20aritmeticos.jpg)
 
-### [Sample Operadores aritmeticos](./Samples/operadores-aritmeticos.php)
+### [Sample Operadores aritmeticos](../Samples/operadores-aritmeticos.php)
 
 # Operadores Relacionales
 
 Son los operadores que nos ayudan a comparar
 dos valores.
 
-### [Sample Operadores relacionales](./Samples/operadores-relacionales.php)
+### [Sample Operadores relacionales](../Samples/operadores-relacionales.php)
 
 
 Operador Descripción
@@ -365,7 +362,7 @@ Operador Descripción
 
 .=	Concatenación
 
-### [Otros operadores](./Samples/otros-operadores.php)
+### [Otros operadores](../Samples/otros-operadores.php)
 
 PHP también posee otros operadores importantes y muy usados como los de asignación, incremento/decremento y concatenación.
 
@@ -489,7 +486,7 @@ echo "\n"; # Salto de línea
 # Carlos Santana
 ```
 
-### [Precedencia](./Samples/precedencia.php)
+### [Precedencia](../Samples/precedencia.php)
 
 En pocas palabras, la precedencia de operadores es cuando el lenguaje nos dice qué operación pasará primero y qué operación pasará después de acuerdo al operador. Por ejemplo:
 
@@ -637,13 +634,13 @@ Los paréntesis forzarán a realizar la evaluación que este dentro. Por ello es
 
 # Arreglos
 
-<img src="https://i.ibb.co/Cbwkn1v/array.png" alt="array" border="0">
+![](../MD/Resources/img/array.png)
 
-<img src="https://i.ibb.co/Wt2tNLB/array-asosiativa.png" alt="array-asosiativa" border="0">
+![](../MD/Resources/img/array_asosiativa.png)
 
 Manera gráfica de un arreglo:
 
-<img src="https://i.ibb.co/Ltycnm1/arrray-grafic.webp" alt="arrray-grafic" border="0">
+![](../MD/Resources/img/arrray_grafic.webp)
 
 Ejemplos:
 
@@ -662,20 +659,20 @@ $joe = array('name'=>'Jose','age'=>25,'country'=>'mexico');
 ```
 # Estructuras de control
 
-<img src="https://i.ibb.co/7XyX5wp/decisiones.png" alt="decisiones" border="0">
+![](../MD/Resources/img/decisiones.png)
 
-<img src="https://i.ibb.co/pvbb90v/if-else.png" alt="if-else" border="0">
+![](../MD/Resources/img/if_else.png)
 
-<img src="https://i.ibb.co/JRWzKDb/sintaxis-if.png" alt="sintaxis-if" border="0">
+![](../MD/Resources/img/sintaxis_if.png)
 
-<img src="https://i.ibb.co/f4TyC2b/if-true.png" alt="if-true" border="0">
+![](../MD/Resources/img/if_true.png)
 
 Ejemplo:
 
 ```php
 <?php
 
-$asientos_disponibles = 4;
+$asientos_disponibles = 0;
 
 if ($asientos_disponibles > 0){
     echo "Puedes ver la pelicula de Spidey";
@@ -687,11 +684,11 @@ echo "\n";
 ```
 # Switch
 
-<img src="https://i.ibb.co/M94QyNC/switch.png" alt="switch" border="0">
+![](../MD/Resources/img/switch.png)
 
-<img src="https://i.ibb.co/PW7wcZp/switch-usos.png" alt="switch-usos" border="0">
+![](../MD/Resources/img/switch_usos.png)
 
-<img src="https://i.ibb.co/x5j8GkZ/sintaxis-switch.png" alt="sintaxis-switch" border="0">
+![](../MD/Resources/img/sintaxis_switch.png)
 
 Ejemplo:
 
@@ -724,4 +721,130 @@ switch( $michi ){
 
 echo "\n";
 ```
->>>>>>> e8647ba4468fe796105d2a480a1ba141fc76113e
+
+# Bucles
+
+# While
+
+![](../MD/Resources/img/que_es_bucle.png)
+
+![](../MD/Resources/img/como_funciona_while.png)
+
+![](../MD/Resources/img/sintaxis_while.png)
+
+Ejemplo:
+
+```php
+<?php
+
+$contador = 1;
+$maximo = 10;
+
+while ($contador <= $maximo) {
+    echo "el contador está en {$contador}\n";
+    $contador++;
+}
+```
+
+# Do While
+
+![](../MD/Resources/img/ciclo_do_while.png)
+
+![](../MD/Resources/img/sintaxis_do_while.png)
+
+Ejemplo:
+
+```php
+<?php 
+$usernames = ["salem", "atzin"];
+do {
+    $username = readline("Ingresa tú nombre de usuario: ");
+} 
+while (in_array($username, $usernames));
+    echo "Hola $username";
+?>
+```
+# Ciclo FOR
+
+![](../MD/Resources/img/ciclo_for.png)
+
+![](../MD/Resources/img/sintaxis_ciclo_for.png)
+
+Ejemplo:
+```php
+<?php
+$michis = array (
+    "MichiJuan",
+    "MichiBerto",
+    "Mr.Michi",
+    "MichiMouse",
+    "PepeMichi",
+    "MichiMan",
+    "MichiMe",
+);
+for ($i=0; $i <= count($michis) - 1 ; $i++) {     
+    echo $i . "- " . $michis[$i] . "\n";
+}
+?>
+```
+# Ciclo Foreach
+
+![](../MD/Resources/img/ciclo_foreach.png)
+
+![](../MD/Resources/img/sintaxis_foresach.png)
+
+Ejemplo:
+
+```php
+<?php
+
+    $cafes=array(
+        "Capuccino"=>50,
+        "Latte"=>45,
+        "Americano"=>40,
+        "Te chai"=>45
+    );
+
+    echo"\n\t Lista de cafés y precios:";
+    foreach($cafesas$tipo => $costo){
+        echo"\n\t El café $tipo cuesta: $$costo";
+    }
+    
+    $cafe=readline("\nEscribe un cafe para buscarlo: ");
+
+    foreach($cafesas$tipo => $costo){
+        if($tipo == $cafe){
+            echo"\n\t Café tipo: $tipo encontrado";
+            echo"\n\t Costo: $$costo";
+            break;
+        }
+    }
+
+    echo"\n\n";
+
+?>
+```
+
+![](../MD/Resources/img/sintaxis_foreach_llave.png)
+
+Ejemplo:
+
+```php
+<?php
+
+$tiendita_de_cafes = array(
+    "Americano" => 20,
+    "Latte" => 25,
+    "Capuccino" => 27.5,
+    "Mocca" => 24
+);
+
+foreach ($tiendita_de_cafes as $cafe => $price)
+    echo "El café $cafe cuesta $$price USD \n";
+
+
+echo "\n";
+?>
+```
+
+

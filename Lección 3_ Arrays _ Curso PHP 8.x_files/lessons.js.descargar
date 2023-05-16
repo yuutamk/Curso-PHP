@@ -1,0 +1,98 @@
+document.addEventListener('DOMContentLoaded', function () {
+
+    //======================================================================
+    // VARIABLES
+    //======================================================================
+    let lessonsProgress = undefined;
+    let lesson = undefined;
+    let course = undefined;
+    let nodeAsideNav = undefined;
+    let lastPositionScroll = 0;
+    const TOP_MIN_ASIDE_NAV = 75;
+    const INCREMENT_POS = 10;
+
+    //======================================================================
+    // CONSTRUCTOR
+    //======================================================================
+    function mounted () {
+        getData();
+        getProgress();
+        setProgress();
+        markLessons();
+        moveNav();
+        centerNav();
+    };
+
+    //======================================================================
+    // EVENTS
+    //======================================================================
+    window.addEventListener('scroll', moveNav);
+
+    //======================================================================
+    // METHODS
+    //======================================================================
+    function getData () {
+        let lessonData = document.querySelector('.page-lessons');
+        lesson = lessonData.dataset.lesson;
+        course = lessonData.dataset.course;
+        nodeAsideNav = document.querySelector('.aside__nav');
+    }
+
+    function moveNav () {
+        if (window.pageYOffset === 0) {
+            // Top
+            nodeAsideNav.classList.add('aside__nav--small');
+        } else {
+            // Other position scroll
+            nodeAsideNav.classList.remove('aside__nav--small');
+        }
+    }
+
+    function getProgress () {
+        // Get all progress from courses
+        lessonsProgress = JSON.parse(localStorage.getItem('lessonsProgress'));
+    }
+
+    function setProgress () {
+        // Set course
+        if (lessonsProgress == null || !lessonsProgress.hasOwnProperty(course)) {
+            if (lessonsProgress == null) {
+                // Create object
+                let newCourse = {};
+                newCourse[course] = [];
+                lessonsProgress = newCourse;
+            } else if (lessonsProgress[course] === undefined) {
+                lessonsProgress[course] = [];
+            } else {
+                // Add course
+                lessonsProgress[course].push(newCourse);
+            }
+        }
+        // Set lesson
+        if (!lessonsProgress[course].includes(lesson) && lesson != '') {
+            lessonsProgress[course].push(lesson);
+        }
+        // Save progress
+        localStorage.setItem('lessonsProgress', JSON.stringify(lessonsProgress));
+    }
+
+    function markLessons () {
+        let lessons = document.querySelectorAll('.lesson_icon');
+        lessons.forEach(function (item) {
+            if (lessonsProgress[course].includes(item.dataset.lesson) && !item.parentNode.classList.contains('active')) {
+               item.classList.add('read');
+            }
+        });
+    }
+
+    function centerNav() {
+        document.querySelector("a.active").scrollIntoView({block: "center"});
+    }
+
+    //======================================================================
+    // INIT
+    //======================================================================
+    headroom = undefined;
+    mounted();
+
+});

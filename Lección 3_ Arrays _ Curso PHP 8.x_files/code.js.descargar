@@ -1,0 +1,31 @@
+
+let highlighterRouge = document.querySelectorAll('div.highlighter-rouge');
+
+function copyToClipboard(node) {
+    const myNode = node.target.parentNode
+    if (document.selection) {
+        const range = document.body.createTextRange();
+        range.moveToElementText(myNode);
+        range.select().createTextRange();
+        document.execCommand("copy");
+    } else if (window.getSelection) {
+        const selection = window.getSelection();    // Save the selection.
+        const range = document.createRange();
+        range.selectNode(myNode);
+        range.selectNodeContents(myNode);
+        selection.removeAllRanges();          // Remove all ranges from the selection.
+        selection.addRange(range);            // Add the new range.
+        document.execCommand("copy");
+    }
+}
+
+highlighterRouge.forEach((code) => {
+    // Get language
+    code.dataset.language = code.classList[0].split('-')[1]
+    // Add clipboard icon
+    const clipboard = document.createElement('div')
+    clipboard.classList.add('highlighter-rouge__clipboard')
+    code.appendChild(clipboard)
+    // Set event copy to clipboard
+    clipboard.addEventListener('click', copyToClipboard)
+})
