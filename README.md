@@ -1,7 +1,6 @@
 
-# Curso-PHP
-
 # Curso PHP
+
 # ¿Que es PHP?
 
 PHP es un lenguaje de scripting de uso general que es especialmente adecuado para el desarrollo web.
