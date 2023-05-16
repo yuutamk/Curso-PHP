@@ -847,4 +847,43 @@ echo "\n";
 ?>
 ```
 
+# ¡Reto!
 
+![](../MD/Resources/img/Reto_formas_de_llegar.png)
+
+![](../MD/Resources/img/cuantas_formas.png)
+
+### Mas simplificado...
+
+![](../MD/Resources/img/tablero_formas_de_llegar.png)
+
+Usa esto de ejemplo:
+
+![](../MD/Resources/img/tablero_resuelto_formas_de_llegar.png)
+
+![](../MD/Resources/img/sucesion_de_fibonacci.png)
+
+# Funciones
+
+![](../MD/Resources/img/reutiliza%20codigo-funciones.png)
+
+![](../MD/Resources/img/que%20es%20una%20funcion.png)
+
+![](../MD/Resources/img/que%20es%20una%20funcion_2.png)
+
+![](../MD/Resources/img/que%20es%20una%20funcion-resumen.png)
+
+![](../MD/Resources/img/funcion%20sirve%20para.png)
+
+Ejemplo:
+
+```php
+<?php 
+function suma($numero1, $numero2){
+    echo $numero1 + $numero2;
+}
+
+suma(2,3);
+
+?>
+```

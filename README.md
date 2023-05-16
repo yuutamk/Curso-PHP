@@ -721,3 +721,168 @@ switch( $michi ){
 
 echo "\n";
 ```
+# Bucles
+
+# While
+
+<img src="https://i.ibb.co/rtrk3Ck/que-es-bucle.png" alt="que-es-bucle" border="0">
+
+<img src="https://i.ibb.co/V3zYY1x/como-funciona-while.png" alt="como-funciona-while" border="0">
+
+<img src="https://i.ibb.co/WnFsTs8/sintaxis-while.png" alt="sintaxis-while" border="0">
+
+Ejemplo:
+
+```php
+<?php
+
+$contador = 1;
+$maximo = 10;
+
+while ($contador <= $maximo) {
+    echo "el contador está en {$contador}\n";
+    $contador++;
+}
+```
+
+# Do While
+
+<img src="https://i.ibb.co/PxMY29Y/ciclo-do-while.png" alt="ciclo-do-while" border="0">
+
+<img src="https://i.ibb.co/sqmDtbG/sintaxis-do-while.png" alt="sintaxis-do-while" border="0">
+
+Ejemplo:
+
+```php
+<?php 
+$usernames = ["salem", "atzin"];
+do {
+    $username = readline("Ingresa tú nombre de usuario: ");
+} 
+while (in_array($username, $usernames));
+    echo "Hola $username";
+?>
+```
+# Ciclo FOR
+
+<img src="https://i.ibb.co/Cm5Yk3M/ciclo-for.png" alt="ciclo-for" border="0">
+
+<img src="https://i.ibb.co/mH27jPk/sintaxis-ciclo-for.png" alt="sintaxis-ciclo-for" border="0">
+
+Ejemplo:
+```php
+<?php
+$michis = array (
+    "MichiJuan",
+    "MichiBerto",
+    "Mr.Michi",
+    "MichiMouse",
+    "PepeMichi",
+    "MichiMan",
+    "MichiMe",
+);
+for ($i=0; $i <= count($michis) - 1 ; $i++) {     
+    echo $i . "- " . $michis[$i] . "\n";
+}
+?>
+```
+# Ciclo Foreach
+
+<img src="https://i.ibb.co/5rNVyS3/ciclo-foreach.png" alt="ciclo-foreach" border="0">
+
+<img src="https://i.ibb.co/NtBPqHv/sintaxis-foresach.png" alt="sintaxis-foresach" border="0">
+
+Ejemplo:
+
+```php
+<?php
+
+    $cafes=array(
+        "Capuccino"=>50,
+        "Latte"=>45,
+        "Americano"=>40,
+        "Te chai"=>45
+    );
+
+    echo"\n\t Lista de cafés y precios:";
+    foreach($cafesas$tipo => $costo){
+        echo"\n\t El café $tipo cuesta: $$costo";
+    }
+    
+    $cafe=readline("\nEscribe un cafe para buscarlo: ");
+
+    foreach($cafesas$tipo => $costo){
+        if($tipo == $cafe){
+            echo"\n\t Café tipo: $tipo encontrado";
+            echo"\n\t Costo: $$costo";
+            break;
+        }
+    }
+
+    echo"\n\n";
+
+?>
+```
+
+<img src="https://i.ibb.co/68Nv2Jc/sintaxis-foreach-llave.png" alt="sintaxis-foreach-llave" border="0">
+
+Ejemplo:
+
+```php
+<?php
+
+$tiendita_de_cafes = array(
+    "Americano" => 20,
+    "Latte" => 25,
+    "Capuccino" => 27.5,
+    "Mocca" => 24
+);
+
+foreach ($tiendita_de_cafes as $cafe => $price)
+    echo "El café $cafe cuesta $$price USD \n";
+
+
+echo "\n";
+?>
+```
+
+# ¡Reto!
+
+<img src="https://i.ibb.co/K9b8sTP/Reto-formas-de-llegar.png" alt="Reto-formas-de-llegar" border="0">
+
+<img src="https://i.ibb.co/n0PPpZ8/cuantas-formas.png" alt="cuantas-formas" border="0">
+
+### Mas simplificado...
+
+<img src="https://i.ibb.co/4FdwQrn/tablero-formas-de-llegar.png" alt="tablero-formas-de-llegar" border="0">
+
+Usa esto de ejemplo:
+
+<img src="https://i.ibb.co/rFMY7X2/tablero-resuelto-formas-de-llegar.png" alt="tablero-resuelto-formas-de-llegar" border="0">
+
+<img src="https://i.ibb.co/smZ3nHh/sucesion-de-fibonacci.png" alt="sucesion-de-fibonacci" border="0">
+
+# Funciones
+
+<img src="https://i.ibb.co/k2zkb8n/reutiliza-codigo-funciones.png" alt="reutiliza-codigo-funciones" border="0">
+
+<img src="https://i.ibb.co/D8nzJDD/que-es-una-funcion.png" alt="que-es-una-funcion" border="0">
+
+<img src="https://i.ibb.co/GQv1bW6/que-es-una-funcion-2.png" alt="que-es-una-funcion-2" border="0">
+
+<img src="https://i.ibb.co/F4D93Rp/que-es-una-funcion-resumen.png" alt="que-es-una-funcion-resumen" border="0">
+
+<img src="https://i.ibb.co/GJ3rncm/funcion-sirve-para.png" alt="funcion-sirve-para" border="0">
+
+Ejemplo:
+
+```php
+<?php 
+function suma($numero1, $numero2){
+    echo $numero1 + $numero2;
+}
+
+suma(2,3);
+
+?>
+```
