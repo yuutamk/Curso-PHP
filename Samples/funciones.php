@@ -30,3 +30,17 @@ get_pokemon();
 }
  */
 echo "\n";
+
+function saludar($nombre ='amigo(a)'){
+
+    echo "Hola $nombre ¿como estas?<br>";
+}
+saludar('Alexa');
+saludar();
+
+function sumarNumeros($num1, $num2, $num3){
+    return $num1 + $num2 + $num3;
+}
+
+$sumaTota1 = sumarNumeros(1,24,19);
+echo "La suma total es: $sumaTota1";
