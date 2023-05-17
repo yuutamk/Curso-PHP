@@ -11,14 +11,18 @@ function es_estudiante_legend($conversa_rank) {
 
 }
 
-do {
+$conversa_rank_user = (int) readline("Por favor, dinos cual es tu Conversa Rank: ");
+
+    es_estudiante_legend($conversa_rank_user);
+
+/* do {
 
     $conversa_rank_user = (int) readline("Por favor, dinos cual es tu Conversa Rank: ");
 
     es_estudiante_legend($conversa_rank_user);
     
 } while(true);
-
+ */
 
 
 echo "\n";

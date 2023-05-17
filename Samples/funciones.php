@@ -23,7 +23,7 @@ function get_pokemon() {
 
 }
 
-get_pokemon();
+//get_pokemon();
 
 /* for ($i=0; $i < 20; $i++) { 
     get_pokemon();
@@ -44,3 +44,21 @@ function sumarNumeros($num1, $num2, $num3){
 
 $sumaTota1 = sumarNumeros(1,24,19);
 echo "La suma total es: $sumaTota1";
+
+
+
+function helados () {
+  $helado = array("chocolate", "fresa", "vainilla", "chocochip", "menta");
+
+  $random = array_rand($helado);
+
+  if ($random <= 4)
+      echo "Tu helado es de: " .$helado[$random];
+  else
+      echo "Se acabo el helado 😕";
+  }
+
+
+helados();
+
+echo "\n";

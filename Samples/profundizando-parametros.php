@@ -1,40 +1,60 @@
 <?php
 
-// function suma($a = 1, $b = 1) {
-//    echo "La suma de $a + $b es: " . $a + $b . "\n";
-//}
+// Funcion simple
 
-// suma();
+/* function suma($a, $b){
+    echo "la suma de $a + $b es: " . $a + $b . "\n";
 
-// $arreglo1 = [1, 2, 3];
-// $arreglo2 = [4, 5, 6];
+} */
 
-// $resultado = [...$arreglo1, ...$arreglo2];
+// Funcion con parametros por defecto
+function suma($a = 1, $b = 1) {
+    echo "La suma de $a + $b es: " . $a + $b . "\n";
+}
 
-// var_dump($resultado);
+
+suma(1,2);
+suma(5,8);
+suma(7,22);
 
 
-// function suma($a, $b) {
-//    echo "La suma de $a + $b es: " . $a + $b . "\n";
-//}
 
-//$numeros = [1, 2];
-//$numeros2 = [50, 20];
-//$numeros3 = [10000, 2];
 
-//suma(...$numeros);
-//suma(...$numeros2);
-//suma(...$numeros3);
+// Array unpacking
+
+/* $arreglo1 = [1, 2, 3];
+$arreglo2 = [4, 5, 6];
+
+$resultado = [...$arreglo1, ...$arreglo2];
+
+var_dump($resultado); */
+
+// Array unpacking para asignar paramertros en la funcion
+
+/* function suma($a, $b) {
+    echo "La suma de $a + $b es: " . $a + $b . "\n";
+}
+
+$numeros = [1, 2];
+$numeros2 = [50, 20];
+$numeros3 = [10000, 2];
+
+suma(...$numeros);
+suma(...$numeros2);
+suma(...$numeros3); */
+
+// Array unpacking para parametros dinamicos
 
 function suma_infinita(...$params) {
+    var_dump($params);
 
-    $suma = 0;
+    /* $suma = 0;
     
     foreach ($params as $numero) {
         $suma += $numero;
     }
 
-    echo "La sumatoria es: $suma \n";
+    echo "La sumatoria es: $suma \n"; */
 
 }
 
