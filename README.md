@@ -723,8 +723,7 @@ switch( $michi ){
 
 echo "\n";
 ```
-<<<<<<< HEAD
-=======
+
 # Bucles
 
 # While
@@ -1002,5 +1001,5 @@ $total = count($frutas);
 
 echo $total; // muestra "3"
 ```
->>>>>>> master
+
 
