@@ -847,4 +847,155 @@ echo "\n";
 ?>
 ```
 
+# ¡Reto!
+
+![](../MD/Resources/img/Reto_formas_de_llegar.png)
+
+![](../MD/Resources/img/cuantas_formas.png)
+
+### Mas simplificado...
+
+![](../MD/Resources/img/tablero_formas_de_llegar.png)
+
+Usa esto de ejemplo:
+
+![](../MD/Resources/img/tablero_resuelto_formas_de_llegar.png)
+
+![](../MD/Resources/img/sucesion_de_fibonacci.png)
+
+# Funciones
+
+![](../MD/Resources/img/reutiliza%20codigo-funciones.png)
+
+![](../MD/Resources/img/que%20es%20una%20funcion.png)
+
+![](../MD/Resources/img/que%20es%20una%20funcion_2.png)
+
+![](../MD/Resources/img/que%20es%20una%20funcion-resumen.png)
+
+![](../MD/Resources/img/funcion%20sirve%20para.png)
+
+Ejemplo:
+
+```php
+<?php 
+function suma($numero1, $numero2){
+    echo $numero1 + $numero2;
+}
+
+suma(2,3);
+
+?>
+```
+# Parametros
+
+![](../MD/Resources/img/parametros_funciones.png)
+
+## [Parametros.php](../Samples/parametros-funciones.php)
+
+## [Profundizando en parametros.php](../Samples/profundizando-parametros.php)
+
+# Return
+
+![](../MD/Resources/img/return_cajas_magicas.png)
+
+![](../MD/Resources/img/retornar_valore_funcion.png)
+
+![](../MD/Resources/img/retornar_valore_funcion_magica.png)
+
+# Mas funciones prestablecidas
+
+Uno de los mejores ejemplos es la funcion de cookies
+
+## [Documentación cookies](https://www.php.net/manual/es/reserved.variables.cookies.php)
+
+# Cookies
+
+Las cookies son pequeños archivos de texto que se almacenan en el navegador web del usuario. Estos archivos contienen información específica que se utiliza para realizar un seguimiento del comportamiento del usuario en un sitio web.
+
+Ejemplo:
+
+Puedes usar la función `setcookie()` para establecer una cookie en PHP. Esta función acepta varios parámetros, siendo los más comunes el nombre de la cookie y su valor.
+
+```php
+setcookie("nombre_cookie", "valor_cookie", tiempo_expiracion);
+```
+* `"nombre_cookie"`: Especifica el nombre de la cookie.
+* `"valor_cookie"`: Especifica el valor de la cookie.
+* `tiempo_expiracion` (opcional): Define el tiempo de expiración de la cookie. Puedes establecer un tiempo en segundos desde el momento actual o dejarlo en blanco para que la cookie se elimine cuando se cierre el navegador.
+
+Puedes acceder al valor de una cookie utilizando la variable global `$_COOKIE`. Esta variable es un array asociativo que contiene todas las cookies establecidas en la página actual.
+
+```php
+$valor = $_COOKIE["nombre_cookie"];
+echo $valor;
+```
+
+Puedes utilizar la función `isset()` para verificar si una cookie está establecida antes de acceder a su valor.
+
+```php
+if (isset($_COOKIE["nombre_cookie"])) {
+    // La cookie está establecida
+    // Realiza alguna acción
+} else {
+    // La cookie no está establecida
+    // Realiza otra acción
+}
+```
+
+Puedes eliminar una cookie estableciendo su tiempo de expiración en un valor pasado.
+
+```php
+setcookie("nombre_cookie", "", time() - 3600);
+```
+
+En este caso, la cookie se establece con un tiempo de expiración en el pasado, lo que hace que el navegador la elimine.
+
+[Cookies.php](../Samples/cookies.php)
+
+# Convertir mayusculas y minusculas
+
+En PHP, puedes utilizar la función `strtoupper()` para convertir un texto a mayúsculas. Esta función toma como parámetro una cadena de texto y devuelve esa cadena convertida a letras mayúsculas.
+
+```php
+$texto = "Hola, mundo!";
+$textoMayusculas = strtoupper($texto);
+
+echo $textoMayusculas; // muestra "HOLA, MUNDO!"
+```
+
+Si deseas convertir solo la primera letra de cada palabra a mayúsculas, puedes utilizar la función `ucwords()` en su lugar.
+
+`strtolower()` para convertir un texto a minúsculas.
+
+# Reordenar arreglos
+
+En PHP, puedes utilizar la función `sort()` para ordenar los elementos de un arreglo de forma ascendente. Esta función modifica el arreglo original, reordenando los elementos en su lugar.
+
+```php
+$frutas = array("manzana", "naranja", "plátano", "uva");
+sort($frutas);
+
+print_r($frutas);
+```
+
+`print_r()` se utiliza para imprimir el arreglo resultante.
+
+`rsort()` para ordenar los elementos de un arreglo en orden descendente.
+
+```php
+$nums = array(5, 2, 9, 1, 7);
+rsort($nums);
+
+print_r($nums);
+```
+
+`count()` para contar los elementos de un arreglo.
+
+```php
+$frutas = array("manzana", "naranja", "plátano");
+$total = count($frutas);
+
+echo $total; // muestra "3"
+```
 
