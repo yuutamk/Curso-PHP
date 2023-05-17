@@ -887,6 +887,7 @@ suma(2,3);
 
 ?>
 ```
+# Parametros
 
 ![](../MD/Resources/img/parametros_funciones.png)
 
