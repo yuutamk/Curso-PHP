@@ -96,3 +96,314 @@ Es una propiedad de las relaciones que indica la cantidad y correspondencia con 
 ![](../MD/Resources/img/DB_cardinalidades.png)
 
 ![](../MD/Resources/img/DB_cardinalidad-N-N.webp)
+
+
+# Comandos SQL
+
+Iniciar SQL como administrador
+
+```sql
+mysql -u root -p
+```
+
+
+Para crear un usuario
+
+```sql
+ CREATE USER 'nombre_usuario'@'localhost' IDENTIFIED BY 'password';
+```
+
+Para eliminar un usuario
+```sql
+ DROP USER 'nombre_usuario'@'localhost';
+ ```
+
+ GRANT
+
+ ![](../MD/Resources/img/DB_Grant.png)
+
+ 
+ se utiliza para otorgar permisos o privilegios a los usuarios en una base de datos. Permite a los administradores o propietarios de una base de datos asignar diferentes niveles de acceso y control sobre los objetos y operaciones dentro del sistema de gestión de bases de datos.
+
+ ```sql
+ GRANT permisos ON objeto TO usuario;
+```
+
+FLUSH PRIVILEGES
+
+vuelve a cargar los archivos de permisos y actualiza la memoria caché de privilegios del servidor. Esto asegura que los cambios realizados en los privilegios se reflejen de inmediato y los usuarios puedan ejercer sus nuevos privilegios sin necesidad de reiniciar el servidor.
+
+```sql
+GRANT
+            privileges
+        ON
+            databases.tables
+        TO
+            user;
+    FLUSH PRIVIILEGES;
+```
+
+###  [DOCUMENTACION GRANT](https://mariadb.com/kb/en/grant/#grant-option)
+
+CREAR BASE DE DATOS
+
+![](../MD/Resources/img/DB_createDB.png)
+
+## [AQUI EL ARCHIVO CREATE DATABASE](../SQL/1-create-database.sql)
+
+CREAR TABLAS
+
+![](../MD/Resources/img/DB_create_Table.png)
+
+CREATE TABLE se utiliza en SQL para crear una nueva tabla en una base de datos. Esta instrucción permite definir la estructura de la tabla, especificando los nombres de las columnas, los tipos de datos, las restricciones y otros atributos.
+
+ ```sql
+ CREATE TABLE nombre_tabla (
+    columna1 tipo_dato1,
+    columna2 tipo_dato2,
+    columna3 tipo_dato3,
+    ...
+);
+```
+Por ejemplo, para crear una tabla llamada "Usuarios" con tres columnas, incluyendo "ID" de tipo entero, "Nombre" de tipo cadena de texto y "Edad" de tipo entero, se puede utilizar la siguiente instrucción:
+
+```sql
+CREATE TABLE Usuarios (
+    ID INT,
+    Nombre VARCHAR(50),
+    Edad INT
+);
+```
+## [AQUI EL ARCHIVO CREATE TABLE](../SQL/2-create-tables.sql)
+
+ALTER TABLE
+
+se utiliza para realizar modificaciones en la estructura de una tabla existente. Permite agregar, modificar o eliminar columnas, así como agregar o eliminar restricciones, índices y claves.
+
+```SQL
+ALTER TABLE nombre_tabla
+accion_modificacion;
+```
+
+* ADD COLUMN: Se utiliza para agregar una nueva columna a la tabla. Se especifica el nombre de la columna, el tipo de dato y otras propiedades necesarias.
+
+* MODIFY COLUMN: Se utiliza para modificar las propiedades de una columna existente, como el tipo de dato, la restricción NOT NULL, entre otros.
+
+* DROP COLUMN: Se utiliza para eliminar una columna de la tabla.
+
+* ADD CONSTRAINT: Se utiliza para agregar una restricción a la tabla, como una clave primaria, una clave foránea o una restricción de unicidad.
+
+* DROP CONSTRAINT: Se utiliza para eliminar una restricción de la tabla.
+
+Otros tipos de modificaciones: La instrucción ALTER TABLE también permite realizar otras modificaciones, como cambiar el nombre de la tabla, agregar o eliminar índices, entre otros.
+
+## [AQUI EL ARCHIVO ALTER](../SQL/3-alter-table.sql)
+
+ INSERT INTO
+
+ se utiliza para insertar una o varias filas de datos en una tabla específica. 
+
+ ```SQL
+ INSERT INTO nombre_tabla (columna1, columna2, columna3, ...)
+VALUES (valor1, valor2, valor3, ...);
+```
+
+* "nombre_tabla" es el nombre de la tabla en la que deseas insertar los datos.
+* Dentro de los paréntesis, se especifican las columnas en las que se insertarán los valores.
+* Después de la cláusula VALUES, se especifican los valores correspondientes a cada columna en el mismo orden en el que se mencionaron.
+
+## [AQUI EL ARCHIVO INSERT](../SQL/4-insert-lines.sql)
+
+UPDATE
+
+se utiliza para modificar los datos existentes en una tabla.
+
+* SET: La cláusula SET especifica las columnas que se van a actualizar y los nuevos valores que se les asignarán. 
+
+```SQL
+UPDATE nombre_tabla
+SET columna1 = valor1, columna2 = valor2, ...
+```
+
+* WHERE: La cláusula WHERE se utiliza para especificar una condición que debe cumplir una fila para que se realice la actualización. Solo las filas que cumplan con la condición se verán afectadas por la modificación.
+
+## [AQUI EL ARCHIVO UPDATE](../SQL/7-updating-info.sql)
+
+DELETE FROM
+
+se utiliza para eliminar filas de una tabla en una base de datos.
+
+WHERE
+
+se utiliza para especificar una condición que debe cumplirse para que se eliminen las filas. Solo las filas que cumplan con la condición se eliminarán.
+
+```SQL
+DELETE FROM nombre_tabla
+WHERE condicion
+```
+## [AQUI EL ARCHIVO DELETE](../SQL/8-delete-record.sql)
+
+TRUNCATE TABLE
+
+se utiliza para eliminar todas las filas de una tabla en una base de datos. A diferencia de la instrucción DELETE FROM, que elimina las filas una por una, TRUNCATE TABLE elimina todas las filas de una sola vez y reinicia los identificadores de autoincremento, si los hay.
+
+***Es importante tener en cuenta que la instrucción TRUNCATE TABLE no se puede deshacer. Una vez que se ejecuta, no hay forma de recuperar los datos eliminados. Por lo tanto, se recomienda tener precaución al utilizar esta instrucción y asegurarse de tener copias de seguridad adecuadas de los datos antes de ejecutarla.***
+
+```SQL
+TRUNCATE TABLE nombre_tabla;
+```
+## [AQUI EL ARCHIVO TRUNCATE](../SQL/11-truncate.sql)
+
+DROP TABLE
+
+se utiliza para eliminar una tabla completa de una base de datos, incluyendo todas sus filas, columnas, índices y restricciones. Esta acción es permanente y no se puede deshacer.
+
+```SQL
+DROP TABLE nombre_tabla;
+```
+***Al ejecutar esta instrucción, se eliminará por completo la tabla especificada, junto con todos sus datos y elementos asociados. Es importante tener en cuenta que no se podrá acceder ni recuperar ninguna información de la tabla después de eliminarla.***
+
+SELECT
+
+se utiliza en SQL para recuperar datos de una base de datos. Es una de las instrucciones más importantes y frecuentemente utilizadas en SQL.
+
+```SQL
+SELECT columnas
+FROM tabla
+WHERE condicion
+```
+La instrucción SELECT también se puede combinar con otras cláusulas, como GROUP BY, ORDER BY, JOIN, entre otras, para realizar consultas más complejas y obtener resultados específicos de la base de datos.
+
+## [AQUI EL ARCHIVO SELECT](../SQL/13-select.sql)
+
+# CONEXION SQL CON PHP
+
+Ahora que ya conocemos los conceptos básicos podemos empezar a relacionar los dos lenguajes a través de consultas.
+
+```php
+<?php
+// Datos de conexión a la base de datos
+$host = "localhost"; // Dirección del servidor de la base de datos
+$usuario = "usuario_db"; // Nombre de usuario de la base de datos
+$password = "contraseña_db"; // Contraseña de la base de datos
+$nombre_db = "nombre_db"; // Nombre de la base de datos
+
+// Conexión a la base de datos
+$conexion = new mysqli($host, $usuario, $password, $nombre_db);
+
+// Verificar si la conexión tuvo éxito
+if ($conexion->connect_errno) {
+    die("Error en la conexión a la base de datos: " . $conexion->connect_error);
+}
+
+// Consulta SQL
+$sql = "SELECT * FROM tabla";
+
+// Ejecutar la consulta
+$resultado = $conexion->query($sql);
+
+// Verificar si la consulta tuvo éxito
+if (!$resultado) {
+    die("Error en la consulta: " . $conexion->error);
+}
+
+// Obtener los datos de la consulta
+while ($fila = $resultado->fetch_assoc()) {
+    // Acceder a los valores de las columnas
+    $valor1 = $fila['columna1'];
+    $valor2 = $fila['columna2'];
+    
+    // Hacer algo con los valores obtenidos
+    echo "Valor 1: " . $valor1 . "<br>";
+    echo "Valor 2: " . $valor2 . "<br>";
+}
+
+// Cerrar la conexión a la base de datos
+$conexion->close();
+?>
+```
+
+En este ejemplo, se establece una conexión con la base de datos utilizando la clase `mysqli` de PHP. Luego se ejecuta una consulta SQL para seleccionar todos los registros de una tabla específica. Los datos obtenidos se recorren utilizando un bucle while y se accede a los valores de cada columna. Finalmente, se cierra la conexión a la base de datos.
+
+**`mysqli`** proporciona una interfaz para conectarse a bases de datos MySQL y realizar operaciones como consultas, inserciones, actualizaciones y eliminaciones.
+
+Luego, se ejecuta una consulta SQL utilizando el método `query()` y se recorren los resultados utilizando un bucle `while`. Para acceder a los valores de las columnas de cada fila, se utiliza el método `fetch_assoc()`. Finalmente, se cierra la conexión a la base de datos utilizando el método `close()`.
+
+`fetch_assoc()` se utiliza en PHP con la extensión mysqli para obtener una fila de resultados de una consulta como un array asociativo. Cada elemento del array representa una columna de la fila, donde la clave del array es el nombre de la columna y el valor del array es el valor de esa columna en esa fila.
+
+EJEMPLO:
+
+Para este ejemplo es necesario crear primero las bases de datos necesarias.
+
+```SQL
+CREATE TABLE `base1` (
+
+    `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    `mail` VARCHAR(70) NOT NULL,
+    `codigocurso` INT(10) not null,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (id)
+    )
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_unicode_ci;
+```
+
+## [AQUI UN EJEMPLO USANDO UN FORMULARIO](../Samples/SQL/Formulario_Sample.php)
+
+## [AQUI LA PAGINA 2 QUE ES LA QUE NOS MUESTRA LA CONSULTA](../Samples/SQL/pagina2.php)
+
+APLICANDO SELECT PARA REALIZAR CONSULTAS
+
+Veremos entonces como recuperar los datos almacenados en la tabla alumnos de la base de datos "base1".
+
+EJEMPLO:
+
+Supongamos que tienes una tabla llamada "usuarios" con las siguientes columnas: id, nombre, email y edad.
+
+```PHP
+<?php
+$host = "localhost";
+$usuario = "usuario_db";
+$password = "contraseña_db";
+$nombre_db = "nombre_db";
+
+$conexion = new mysqli($host, $usuario, $password, $nombre_db);
+
+// Verificar si la conexión tuvo éxito
+if ($conexion->connect_errno) {
+    die("Error en la conexión a la base de datos: " . $conexion->connect_error);
+}
+
+$sql = "SELECT id, nombre, email, edad FROM usuarios";
+$resultado = $conexion->query($sql);
+
+if (!$resultado) {
+    die("Error en la consulta: " . $conexion->error);
+}
+
+// Verificar si hay filas de resultados
+if ($resultado->num_rows > 0) {
+    // Recorrer los resultados y mostrar los datos
+    while ($fila = $resultado->fetch_assoc()) {
+        echo "ID: " . $fila["id"] . "<br>";
+        echo "Nombre: " . $fila["nombre"] . "<br>";
+        echo "Email: " . $fila["email"] . "<br>";
+        echo "Edad: " . $fila["edad"] . "<br>";
+        echo "<br>";
+    }
+} else {
+    echo "No se encontraron resultados.";
+}
+
+// Cerrar la conexión a la base de datos
+$conexion->close();
+?>
+```
+
+En este ejemplo, se realiza una consulta SELECT para obtener todos los registros de la tabla "usuarios". Luego, se recorren los resultados utilizando un bucle while y se muestra la información de cada usuario en el formato deseado.
+
+Es importante tener en cuenta que se realiza una verificación adicional con `$resultado->num_rows` para asegurarse de que haya filas de resultados antes de intentar recorrerlos. Si no hay filas, se muestra un mensaje indicando que no se encontraron resultados.
+
