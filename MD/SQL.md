@@ -407,3 +407,4 @@ En este ejemplo, se realiza una consulta SELECT para obtener todos los registros
 
 Es importante tener en cuenta que se realiza una verificación adicional con `$resultado->num_rows` para asegurarse de que haya filas de resultados antes de intentar recorrerlos. Si no hay filas, se muestra un mensaje indicando que no se encontraron resultados.
 
+## [AQUI EL ARCHIVO SELECT](../Samples/SQL/Select_DB.php)
