@@ -29,7 +29,7 @@ El 30% de los sitios de todo internet están construidos con WordPress (el CMS d
 Toda nuestra aplicación está guardada en un servidor, el cual entrega una copia de  a misma a cada cliente que la solicite.
 
 Además, el servidor también se encarga de responder cada solicitud del usuario.
-<img src="https://i.ibb.co/SwSMSnw/cliente-servidor.jpg" alt="cliente-servidor" border="0">
+![](./MD/Resources/img/cliente%20servidor.png)
 
 
 ## Servidor físico o VPS

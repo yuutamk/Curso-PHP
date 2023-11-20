@@ -29,14 +29,14 @@ Toda nuestra aplicación está guardada en un servidor, el cual entrega una copi
 
 Además, el servidor también se encarga de responder cada solicitud del usuario.
 
-![](./Resources/img/cliente%20servidor.png)
+![](./MD/Resources/img/cliente%20servidor.png)
 
 ## Servidor físico o VPS
 Es la computadora que se encarga de guardar tu página web y mantener accesible 24/7. Se le conoce como servidor y siempre está conectado a internet.
 
 A través de él podemos definir ciertas reglas de seguridad para nuestra página.
 
-![](./Resources/img/servidor%20fisico%20y%20vps.jpg)
+![](./Resources/img/servidor%20fisico%20y%20vps.jpg)ggg
 
 ## Servidor web
 Es un programa que corre dentro de nuestro servidor físico y se encarga de gestionar cualquier petición que llegue al mismo.
