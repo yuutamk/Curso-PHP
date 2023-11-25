@@ -153,7 +153,7 @@ combinatoria de constituyentes sintácticos y la
 formación de unidades superiores a estos, como
 los sintagmas y Ias oraciones gramaticales."
 
-![100](./Resources/img/../../MD/Resources/img/wazowski%20OK.jpg)
+![100](./Resources/img/../../MD/Resources/img/wazowskiOK500.png)
 
 **en palabras más sencillas...**
 Son las reglas que dictan cómo se debe estructurar un lenguaje para que tenga sentido lo que decimos.
