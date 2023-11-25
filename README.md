@@ -298,7 +298,7 @@ Echo 'Operador ! (NOT): ';
 	var_dump($resultado);
 ?>
 ```
-¡Reto!
+**¡Reto!**
 
 ```php
 // Suponiendo estas variables
@@ -341,7 +341,7 @@ $sabe_volar || $tiene_2_patas; // false
 Son los operadores que nos ayudan a comparar
 dos valores.
 
-### [Sample Operadores relacionales](../Samples/operadores-relacionales.php)
+### [Sample Operadores relacionales](./Samples/operadores-relacionales.php)
 
 
 Operador Descripción
@@ -362,7 +362,7 @@ Operador Descripción
 
 .=	Concatenación
 
-### [Otros operadores](../Samples/otros-operadores.php)
+### [Otros operadores](./Samples/otros-operadores.php)
 
 PHP también posee otros operadores importantes y muy usados como los de asignación, incremento/decremento y concatenación.
 
