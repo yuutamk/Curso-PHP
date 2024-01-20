@@ -443,7 +443,9 @@ Se usan para comparar valores:
 
 - **Igual (==)**
 - **No igual (!=)**
+- **Diferente (<>)**
 - **Igualdad estricta (===)**
+- **No igualdad (!==)**
 - **Mayor que (>)**
 - **Menor que (<)**
 - **Mayor o igual que (>=)**
@@ -841,4 +843,699 @@ $valor /= 2; // Divide $valor por 2 (equivalente a $valor = $valor / 2)
 $texto = "Hola ";
 $texto .= "mundo"; // Concatena "mundo" al final de $texto (equivalente a $texto = $texto . "mundo")
 // Ahora $texto es "Hola mundo"
+```
+## Arreglos
+
+Los arreglos son una de las estructuras de datos más importantes en cualquier lenguaje de programación. En PHP, los arreglos se utilizan para almacenar colecciones de datos de cualquier tipo, lo que los hace una herramienta indispensable para el desarrollo de aplicaciones web.
+
+En esta ocasion, vamos a explorar los conceptos básicos de los arreglos en PHP, así como algunas técnicas avanzadas para su uso.
+
+### ¿Qué son los arreglos?
+
+Un arreglo es una variable especial que puede almacenar una colección de datos. Los datos almacenados en un arreglo pueden ser de cualquier tipo, incluyendo números, cadenas, objetos, etc.
+
+Los arreglos se definen utilizando corchetes. Por ejemplo, el siguiente código define un arreglo llamado `frutas` que contiene tres elementos:
+
+```php
+$frutas = array("manzana", "pera", "naranja");
+```
+
+Para acceder a un elemento de un arreglo, utilizamos la sintaxis `array_name[index]`. El índice de un elemento es un número entero que comienza en 0. Por ejemplo, el siguiente código imprime el segundo elemento del arreglo `frutas`:
+
+```php
+echo $frutas[1]; // imprime "pera"
+```
+
+Manera gráfica de un arreglo:
+
+![](./MD/Resources/img/arrray_grafic.webp)
+
+### Tipos de arreglos
+
+En PHP, existen dos tipos de arreglos:
+
+* **Arreglos unidimensionales:** Son los arreglos más simples y consisten en una sola dimensión.
+* **Arreglos multidimensionales:** Son arreglos que contienen otros arreglos.
+
+### Arreglos unidimensionales
+
+Los arreglos unidimensionales son los arreglos más comunes. Se utilizan para almacenar colecciones de datos de cualquier tipo.
+
+**Ejemplo:**
+
+```php
+$frutas = array("manzana", "pera", "naranja");
+
+// Imprime la longitud del arreglo
+echo count($frutas); // imprime 3
+
+// Itera sobre el arreglo
+foreach ($frutas as $fruta) {
+    echo $fruta . " ";
+} // imprime "manzana pera naranja"
+```
+
+### Arreglos multidimensionales
+
+Los arreglos multidimensionales son arreglos que contienen otros arreglos. Se utilizan para almacenar colecciones de datos jerárquicas.
+
+**Ejemplo:**
+
+```php
+$productos = array(
+    array("nombre" => "Manzana", "precio" => 10),
+    array("nombre" => "Pera", "precio" => 5),
+    array("nombre" => "Naranja", "precio" => 3),
+);
+
+// Imprime el nombre del primer producto
+echo $productos[0]["nombre"]; // imprime "Manzana"
+
+// Imprime el precio del segundo producto
+echo $productos[1]["precio"]; // imprime 5
+```
+
+### Arreglos asociativos
+
+Los arreglos asociativos son arreglos que utilizan claves para identificar a sus elementos. Las claves pueden ser de cualquier tipo, incluyendo cadenas, números, objetos, etc.
+
+**Ejemplo:**
+
+```php
+$frutas = array(
+    "manzana" => "Rojo",
+    "pera" => "Verde",
+    "naranja" => "Naranja",
+);
+
+// Imprime el color de la manzana
+echo $frutas["manzana"]; // imprime "Rojo"
+
+// Itera sobre el arreglo
+foreach ($frutas as $fruta => $color) {
+    echo $fruta . " es de color " . $color . ". ";
+} // imprime "manzana es de color Rojo. pera es de color Verde. naranja es de color Naranja."
+```
+
+**Funciones para trabajar con arreglos**
+
+PHP proporciona una gran cantidad de funciones para trabajar con arreglos. Estas funciones pueden utilizarse para manipular arreglos, realizar operaciones matemáticas, etc.
+
+**Ejemplos:**
+
+* `array_push()`: Agrega un elemento al final de un arreglo.
+* `array_pop()`: Elimina el último elemento de un arreglo.
+* `array_sort()`: Ordena un arreglo.
+* `array_search()`: Busca un elemento en un arreglo.
+
+
+## Estructuras de control
+
+### If-Else
+
+Los if-else son una de las estructuras de control más comúnmente usadas en PHP. Te permiten ejecutar un bloque de código si se cumple una condición, y otro bloque de código si no se cumple. La sintaxis básica es la siguiente:
+
+```php
+if (condición) {
+  // código a ejecutar si la condición es verdadera
+} else {
+  // código a ejecutar si la condición es falsa
+}
+```
+
+Por ejemplo, supongamos que queremos mostrar un mensaje diferente según la edad de un usuario. Podríamos usar un if-else para hacerlo así:
+
+```php
+$edad = 25; // asignamos un valor a la variable $edad
+
+if ($edad >= 18) {
+  echo "Eres mayor de edad"; // se muestra este mensaje si la edad es mayor o igual a 18
+} else {
+  echo "Eres menor de edad"; // se muestra este mensaje si la edad es menor que 18
+}
+```
+
+El resultado de este código sería:
+
+```
+Eres mayor de edad
+```
+
+También podemos usar elseif para añadir más condiciones al if-else. Por ejemplo, si queremos mostrar un mensaje diferente según el rango de edad del usuario, podríamos hacerlo así:
+
+```php
+$edad = 25; // asignamos un valor a la variable $edad
+
+if ($edad < 18) {
+  echo "Eres menor de edad"; // se muestra este mensaje si la edad es menor que 18
+} elseif ($edad >= 18 && $edad < 65) {
+  echo "Eres adulto"; // se muestra este mensaje si la edad está entre 18 y 64
+} else {
+  echo "Eres jubilado"; // se muestra este mensaje si la edad es mayor o igual a 65
+}
+```
+
+El resultado de este código sería:
+
+```
+Eres adulto
+```
+
+### Switch
+
+Los switch son otro tipo de estructura de control en PHP que te permiten tomar decisiones en función de múltiples condiciones. A diferencia del if-else, el switch solo puede evaluar una expresión y compararla con varios valores posibles. La sintaxis básica es la siguiente:
+
+```php
+switch (expresión) {
+  case valor1:
+    // código a ejecutar si la expresión es igual a valor1
+    break;
+  case valor2:
+    // código a ejecutar si la expresión es igual a valor2
+    break;
+  ...
+  default:
+    // código a ejecutar si la expresión no es igual a ninguno de los valores anteriores
+    break;
+}
+```
+
+Por ejemplo, supongamos que queremos mostrar un mensaje diferente según el día de la semana. Podríamos usar un switch para hacerlo así:
+
+```php
+$dia = "lunes"; // asignamos un valor a la variable $dia
+
+switch ($dia) {
+  case "lunes":
+    echo "Hoy es lunes, el primer día de la semana"; // se muestra este mensaje si el día es lunes
+    break;
+  case "martes":
+    echo "Hoy es martes, el segundo día de la semana"; // se muestra este mensaje si el día es martes
+    break;
+  case "miércoles":
+    echo "Hoy es miércoles, el tercer día de la semana"; // se muestra este mensaje si el día es miércoles
+    break;
+  case "jueves":
+    echo "Hoy es jueves, el cuarto día de la semana"; // se muestra este mensaje si el día es jueves
+    break;
+  case "viernes":
+    echo "Hoy es viernes, el quinto día de la semana"; // se muestra este mensaje si el día es viernes
+    break;
+  case "sábado":
+    echo "Hoy es sábado, el sexto día de la semana"; // se muestra este mensaje si el día es sábado
+    break;
+  case "domingo":
+    echo "Hoy es domingo, el séptimo y último día de la semana"; // se muestra este mensaje si el día es domingo
+    break;
+  default:
+    echo "No es un día válido"; // se muestra este mensaje si el día no es ninguno de los anteriores
+    break;
+}
+```
+
+El resultado de este código sería:
+
+```
+Hoy es lunes, el primer día de la semana
+```
+
+### For
+
+Los for son un tipo de estructura de control en PHP que te permiten ejecutar un bloque de código un número determinado de veces. Son útiles para hacer tareas repetitivas, como recorrer un array o generar una tabla. La sintaxis básica es la siguiente:
+
+```php
+for (inicialización; condición; incremento) {
+  // código a ejecutar en cada iteración
+}
+```
+
+Por ejemplo, supongamos que queremos mostrar los números del 1 al 10. Podríamos usar un for para hacerlo así:
+
+```php
+for ($i = 1; $i <= 10; $i++) {
+  echo $i . "<br>"; // se muestra el valor de la variable $i y un salto de línea en cada iteración
+}
+```
+
+El resultado de este código sería:
+
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+### While
+
+Los while son un tipo de estructura de control en PHP que te permiten ejecutar un bloque de código mientras se cumpla una condición. Son útiles para hacer tareas que no sabemos cuántas veces se van a repetir, como validar un dato o leer un archivo. La sintaxis básica es la siguiente:
+
+```php
+while (condición) {
+  // código a ejecutar en cada iteración
+}
+```
+
+Por ejemplo, supongamos que queremos pedir al usuario que introduzca un número entre 1 y 10. Podríamos usar un while para hacerlo así:
+
+```php
+$numero = 0; // asignamos un valor inicial a la variable $numero
+
+while ($numero < 1 || $numero > 10) {
+  $numero = readline("Introduce un número entre 1 y 10: "); // pedimos al usuario que introduzca un número y lo asignamos a la variable $numero
+}
+
+echo "El número que has introducido es " . $numero; // se muestra el número que ha introducido el usuario
+```
+
+El resultado de este código sería:
+
+```
+Introduce un número entre 1 y 10: 15
+Introduce un número entre 1 y 10: -3
+Introduce un número entre 1 y 10: 7
+El número que has introducido es 7
+```
+
+### Do-While
+
+Los do-while son un tipo de estructura de control en PHP que te permiten ejecutar un bloque de código al menos una vez, y luego repetirlo mientras se cumpla una condición. Son similares a los while, pero la diferencia es que el do-while evalúa la condición al final de cada iteración, y no al principio. La sintaxis básica es la siguiente:
+
+```php
+do {
+  // código a ejecutar en cada iteración
+} while (condición);
+```
+
+Por ejemplo, supongamos que queremos mostrar un menú de opciones al usuario y pedirle que elija una. Podríamos usar un do-while para hacerlo así:
+
+```php
+$opcion = 0; // asignamos un valor inicial a la variable $opcion
+
+do {
+  echo "Menú de opciones:\n"; // mostramos el menú de opciones
+  echo "1. Sumar dos números\n";
+  echo "2. Restar dos números\n";
+  echo "3. Multiplicar dos números\n";
+  echo "4. Dividir dos números\n";
+  echo "5. Salir\n";
+  $opcion = readline("Elige una opción: "); // pedimos al usuario que elija una opción y la asignamos a la variable $opcion
+  switch ($opcion) { // usamos un switch para ejecutar el código correspondiente a cada opción
+    case 1:
+      // código para sumar dos números
+      break;
+    case 2:
+      // código para restar dos números
+      break;
+    case 3:
+      // código para multiplicar dos números
+      break;
+    case 4:
+      // código para dividir dos números
+      break;
+    case 5:
+      echo "Adiós\n"; // se muestra un mensaje de despedida
+      break;
+    default:
+      echo "Opción no válida\n"; // se muestra un mensaje de error
+      break;
+  }
+} while ($opcion != 5); // se repite el bucle mientras la opción no se cumpla
+```
+
+### Foreach
+
+Los foreach son un tipo de estructura de control en PHP que te permiten recorrer los elementos de un array o de un objeto. Son útiles para mostrar o procesar los datos almacenados en una estructura de datos. La sintaxis básica es la siguiente:
+
+```php
+foreach (array o objeto as clave => valor) {
+  // código a ejecutar en cada iteración
+}
+```
+
+Por ejemplo, supongamos que tenemos un array asociativo que almacena los nombres y las edades de algunas personas. Podríamos usar un foreach para mostrarlos así:
+
+```php
+$personas = array("Ana" => 23, "Carlos" => 31, "Elena" => 28, "Luis" => 26); // creamos un array asociativo con los nombres y las edades de las personas
+
+foreach ($personas as $nombre => $edad) {
+  echo "El nombre es " . $nombre . " y la edad es " . $edad . "<br>"; // se muestra el nombre y la edad de cada persona en cada iteración
+}
+```
+
+El resultado de este código sería:
+
+```
+El nombre es Ana y la edad es 23
+El nombre es Carlos y la edad es 31
+El nombre es Elena y la edad es 28
+El nombre es Luis y la edad es 26
+```
+
+# ¡Reto!
+
+![](./MD/Resources/img/Reto_formas_de_llegar.png)
+
+![](./MD/Resources/img/cuantas_formas.png)
+
+### Mas simplificado...
+
+![](./MD/Resources/img/tablero_formas_de_llegar.png)
+
+Usa esto de ejemplo:
+
+![](./MD/Resources/img/tablero_resuelto_formas_de_llegar.png)
+
+![](./MD/Resources/img/sucesion_de_fibonacci.png)
+
+## Funciones
+
+### Funciones definidas por el usuario
+
+Las funciones definidas por el usuario son aquellas que creas tú mismo para adaptarlas a tus necesidades. Una función definida por el usuario se declara con la palabra clave function, seguida del nombre de la función y los paréntesis. Dentro de los paréntesis puedes especificar los argumentos que recibe la función, y dentro de las llaves puedes escribir el código que se ejecuta cuando se llama a la función. La sintaxis básica es la siguiente:
+
+```php
+function nombreDeLaFuncion($argumento1, $argumento2, ...) {
+  // código de la función
+}
+```
+
+Por ejemplo, supongamos que queremos crear una función que salude a una persona. Podríamos hacerlo así:
+
+```php
+function saludar($nombre) {
+  echo "Hola, $nombre. Bienvenido al blog de PHP.<br>";
+}
+
+saludar("Pedro"); // llamamos a la función con el argumento "Pedro"
+saludar("María"); // llamamos a la función con el argumento "María"
+```
+
+El resultado de este código sería:
+
+```
+Hola, Pedro. Bienvenido al blog de PHP.
+Hola, María. Bienvenido al blog de PHP.
+```
+
+### Funciones con argumentos
+
+Los argumentos son los valores que pasas a una función cuando la llamas. Los argumentos se especifican dentro de los paréntesis de la función, separados por comas. Puedes pasar tantos argumentos como quieras, siempre que coincidan con los que espera la función. Los argumentos se pueden usar dentro de la función como si fueran variables locales. La sintaxis básica es la siguiente:
+
+```php
+function nombreDeLaFuncion($argumento1, $argumento2, ...) {
+  // código de la función que usa los argumentos
+}
+
+nombreDeLaFuncion($valor1, $valor2, ...); // llamada a la función con los valores de los argumentos
+```
+
+Por ejemplo, supongamos que queremos crear una función que calcule el área de un rectángulo. Podríamos hacerlo así:
+
+```php
+function areaRectangulo($base, $altura) {
+  $area = $base * $altura; // calculamos el área multiplicando la base por la altura
+  echo "El área del rectángulo es $area.<br>"; // mostramos el resultado
+}
+
+areaRectangulo(10, 5); // llamamos a la función con los valores 10 y 5 para la base y la altura
+areaRectangulo(7, 3); // llamamos a la función con los valores 7 y 3 para la base y la altura
+```
+
+El resultado de este código sería:
+
+```
+El área del rectángulo es 50.
+El área del rectángulo es 21.
+```
+
+### Funciones que devuelven valores
+
+Las funciones pueden devolver un valor al punto donde se llaman usando la sentencia return. El valor que devuelve una función puede ser de cualquier tipo, como un número, una cadena, un array o un objeto. El valor devuelto se puede asignar a una variable, mostrar en pantalla o pasar como argumento a otra función. La sintaxis básica es la siguiente:
+
+```php
+function nombreDeLaFuncion($argumento1, $argumento2, ...) {
+  // código de la función
+  return $valor; // valor que devuelve la función
+}
+
+$variable = nombreDeLaFuncion($valor1, $valor2, ...); // llamada a la función y asignación del valor devuelto a una variable
+```
+
+Por ejemplo, supongamos que queremos crear una función que devuelva el mayor de dos números. Podríamos hacerlo así:
+
+```php
+function mayor($num1, $num2) {
+  if ($num1 > $num2) { // si el primer número es mayor que el segundo
+    return $num1; // devolvemos el primer número
+  } else { // si no
+    return $num2; // devolvemos el segundo número
+  }
+}
+
+$mayor = mayor(15, 20); // llamamos a la función con los valores 15 y 20 y asignamos el valor devuelto a la variable $mayor
+echo "El mayor es $mayor.<br>"; // mostramos el resultado
+```
+
+El resultado de este código sería:
+
+```
+El mayor es 20.
+```
+
+### Funciones variables
+
+Las funciones variables son aquellas que se pueden llamar usando el valor de una variable que contiene el nombre de la función. Esto te permite usar funciones de forma dinámica, según el contexto o las condiciones del programa. La sintaxis básica es la siguiente:
+
+```php
+function nombreDeLaFuncion($argumento1, $argumento2, ...) {
+  // código de la función
+}
+
+$variable = "nombreDeLaFuncion"; // asignamos el nombre de la función a una variable
+
+$variable($valor1, $valor2, ...); // llamamos a la función usando la variable
+```
+
+Por ejemplo, supongamos que tenemos dos funciones que calculan el área de un círculo y el área de un triángulo. Podríamos usar una función variable para llamar a una u otra función según el valor de una variable que indica la figura geométrica. Podríamos hacerlo así:
+
+```php
+function areaCirculo($radio) {
+  $area = pi() * $radio * $radio; // calculamos el área del círculo usando la constante pi y el radio
+  echo "El área del círculo es $area.<br>"; // mostramos el resultado
+}
+
+function areaTriangulo($base, $altura) {
+  $area = ($base * $altura) / 2; // calculamos el área del triángulo usando la base y la altura
+  echo "El área del triángulo es $area.<br>"; // mostramos el resultado
+}
+
+$figura = "circulo"; // asignamos el valor "circulo" a la variable $figura
+$funcion = "area" . ucfirst($figura); // concatenamos el prefijo "area" con el valor de la variable $figura, y ponemos la primera letra en mayúscula
+$funcion(5); // llamamos a la función usando la variable $funcion y el valor 5 como argumento
+
+$figura = "triangulo"; // asignamos el valor "triangulo" a la variable $figura
+$funcion = "area" . ucfirst($figura); // concatenamos el prefijo "area" con el valor de la variable $figura, y ponemos la primera letra en mayúscula
+$funcion(10, 8); // llamamos a la función usando la variable $funcion y los valores 10 y 8 como argumentos
+```
+
+El resultado de este código sería:
+
+```
+El área del círculo es 78.539816339745.
+El área del triángulo es 40.
+```
+
+### Funciones anónimas
+
+Las funciones anónimas son aquellas que no tienen un nombre asignado. Se pueden crear usando la palabra clave function, seguida de los paréntesis y las llaves. Las funciones anónimas se pueden asignar a variables, pasar como argumentos a otras funciones o devolver como valores de otras funciones. La sintaxis básica es la siguiente:
+
+```php
+$variable = function($argumento1, $argumento2, ...) {
+  // código de la función
+};
+```
+
+Por ejemplo, supongamos que queremos crear una función anónima que muestre un mensaje de saludo. Podríamos hacerlo así:
+
+```php
+$saludar = function($nombre) {
+  echo "Hola, $nombre. Bienvenido al blog de PHP.<br>";
+};
+
+$saludar("Pedro"); // llamamos a la función anónima usando la variable $saludar y el argumento "Pedro"
+$saludar("María"); // llamamos a la función anónima usando la variable $saludar y el argumento "María"
+```
+
+El resultado de este código sería:
+
+```
+Hola, Pedro. Bienvenido al blog de PHP.
+Hola, María. Bienvenido al blog de PHP.
+```
+
+### Funciones flecha
+
+Las funciones flecha son un tipo especial de funciones anónimas que se introdujeron en PHP 7.4. Se caracterizan por tener una sintaxis más corta y concisa, y por heredar automáticamente las variables del ámbito externo. La sintaxis básica es la siguiente:
+
+```php
+$variable = fn($argumento1, $argumento2, ...) => expresión;
+```
+
+Por ejemplo, supongamos que queremos crear una función flecha que devuelva el doble de un número. Podríamos hacerlo así:
+
+```php
+$doble = fn($numero) => $numero * 2;
+
+echo $doble(5); // llamamos a la función flecha usando la variable $doble y el argumento 5
+echo $doble(10); // llamamos a la función flecha usando la variable $doble y el argumento 10
+```
+
+El resultado de este código sería:
+
+```
+10
+20
+```
+
+# Cookies
+
+### Guardar las preferencias del usuario
+
+Las cookies son útiles para guardar las preferencias del usuario, como el idioma, el tema o el tamaño de la fuente. De esta forma, puedes ofrecer una experiencia más personalizada y adaptada a cada usuario. Para guardar las preferencias del usuario, puedes usar la función setcookie () para crear una cookie con el nombre, el valor y el tiempo de expiración que quieras. Luego, puedes usar la variable superglobal $_COOKIE para acceder al valor de la cookie y aplicar las preferencias al sitio web. La sintaxis básica es la siguiente:
+
+```php
+setcookie (nombre, valor, tiempo); // crear una cookie
+$_COOKIE[nombre]; // acceder al valor de una cookie
+```
+
+Por ejemplo, supongamos que queremos guardar el idioma preferido del usuario. Podríamos hacerlo así:
+
+```php
+// crear una cookie con el nombre "idioma" y el valor "es" (español) que dure un año
+setcookie ("idioma", "es", time () + (365 * 24 * 60 * 60));
+
+// comprobar si la cookie "idioma" existe
+if (isset($_COOKIE["idioma"])) {
+  // acceder al valor de la cookie "idioma"
+  $idioma = $_COOKIE["idioma"];
+  // mostrar un mensaje en el idioma correspondiente
+  if ($idioma == "es") {
+    echo "Hola, bienvenido al sitio web.";
+  } elseif ($idioma == "en") {
+    echo "Hello, welcome to the website.";
+  } elseif ($idioma == "fr") {
+    echo "Bonjour, bienvenue sur le site web.";
+  }
+}
+```
+
+El resultado de este código sería:
+
+```
+Hola, bienvenido al sitio web.
+```
+
+### Mantener el inicio de sesión
+
+Las cookies también son útiles para mantener el inicio de sesión de los usuarios, es decir, para recordar que un usuario se ha autenticado y evitar que tenga que introducir sus credenciales cada vez que visite el sitio web. Para mantener el inicio de sesión, puedes usar la función setcookie () para crear una cookie con el nombre de usuario, el identificador de sesión o algún otro dato que identifique al usuario. Luego, puedes usar la variable superglobal $_COOKIE para verificar si el usuario está logueado y mostrarle el contenido adecuado. La sintaxis básica es la misma que la del ejemplo anterior, pero hay que tener en cuenta algunas precauciones de seguridad, como:
+
+- Usar un tiempo de expiración corto para la cookie, para evitar que alguien pueda acceder al sitio web con una cookie robada o caducada.
+- Usar un canal seguro (HTTPS) para enviar y recibir las cookies, para evitar que alguien pueda interceptarlas o modificarlas.
+- Usar la opción httponly para evitar que las cookies sean accesibles desde JavaScript, para evitar ataques de tipo XSS (cross-site scripting).
+- Usar la opción secure para indicar que las cookies solo se deben enviar si el canal es seguro (HTTPS), para evitar que alguien pueda capturarlas en un canal inseguro.
+- Usar la opción samesite para indicar que las cookies solo se deben enviar si la solicitud proviene del mismo sitio que las ha creado, para evitar ataques de tipo CSRF (cross-site request forgery).
+
+Por ejemplo, supongamos que queremos mantener el inicio de sesión de un usuario que se ha autenticado con su nombre de usuario y contraseña. Podríamos hacerlo así:
+
+```php
+// supongamos que el usuario ha introducido su nombre de usuario y contraseña y los hemos validado
+$usuario = "admin";
+$contraseña = "1234";
+
+// crear una cookie con el nombre de usuario que dure una hora, con las opciones de seguridad mencionadas
+setcookie ("usuario", $usuario, time () + (60 * 60), "/", "", true, true);
+
+// comprobar si la cookie "usuario" existe
+if (isset($_COOKIE["usuario"])) {
+  // acceder al valor de la cookie "usuario"
+  $usuario = $_COOKIE["usuario"];
+  // mostrar un mensaje de bienvenida al usuario
+  echo "Hola, $usuario. Has iniciado sesión correctamente.";
+  // mostrar el contenido del sitio web para el usuario
+} else {
+  // mostrar el formulario de inicio de sesión
+}
+```
+
+El resultado de este código sería:
+
+```
+Hola, admin. Has iniciado sesión correctamente.
+```
+
+### Contar las visitas
+
+Las cookies también son útiles para contar las visitas de los usuarios, es decir, para saber cuántas veces un usuario ha accedido al sitio web. Para contar las visitas, puedes usar la función setcookie () para crear una cookie con un contador que se incremente cada vez que el usuario visite el sitio web. Luego, puedes usar la variable superglobal $_COOKIE para acceder al valor de la cookie y mostrar el número de visitas. La sintaxis básica es la misma que la del primer ejemplo, pero hay que tener en cuenta que hay que actualizar el valor de la cookie cada vez que se visite el sitio web. Por ejemplo, supongamos que queremos contar las visitas de un usuario. Podríamos hacerlo así:
+
+```php
+// comprobar si la cookie "visitas" existe
+if (isset($_COOKIE["visitas"])) {
+  // acceder al valor de la cookie "visitas"
+  $visitas = $_COOKIE["visitas"];
+  // incrementar el valor de la cookie en uno
+  $visitas++;
+  // actualizar la cookie con el nuevo valor
+  setcookie ("visitas", $visitas, time () + (365 * 24 * 60 * 60));
+} else {
+  // crear una cookie con el valor inicial de uno
+  $visitas = 1;
+  setcookie ("visitas", $visitas, time () + (365 * 24 * 60 * 60));
+}
+
+// mostrar el número de visitas
+echo "Has visitado este sitio web $visitas veces.";
+```
+
+El resultado de este código sería:
+
+```
+Has visitado este sitio web 1 veces.
+```
+
+### Mostrar anuncios personalizados
+
+Las cookies también son útiles para mostrar anuncios personalizados, es decir, para mostrar anuncios que se adapten a los intereses o preferencias de los usuarios. Para mostrar anuncios personalizados, puedes usar la función setcookie () para crear una cookie con el perfil del usuario, basado en sus hábitos de navegación, sus búsquedas, sus compras o cualquier otro dato relevante. Luego, puedes usar la variable superglobal $_COOKIE para acceder al valor de la cookie y mostrar los anuncios que se correspondan con el perfil del usuario. La sintaxis básica es la misma que la del primer ejemplo, pero hay que tener en cuenta que hay que respetar la privacidad de los usuarios y pedir su consentimiento para usar las cookies con fines publicitarios. Por ejemplo, supongamos que queremos mostrar anuncios personalizados a un usuario. Podríamos hacerlo así:
+
+```php
+// supongamos que el usuario ha aceptado el uso de cookies para fines publicitarios
+// supongamos que el usuario ha buscado "viajes a París" en nuestro sitio web
+// crear una cookie con el valor "viajes" que dure un mes
+setcookie ("perfil", "viajes", time () + (30 * 24 * 60 * 60));
+
+// comprobar si la cookie "perfil" existe
+if (isset($_COOKIE["perfil"])) {
+  // acceder al valor de la cookie "perfil"
+  $perfil = $_COOKIE["perfil"];
+  // mostrar un anuncio relacionado con el perfil del usuario
+  if ($perfil == "viajes") {
+    echo "Anuncio: ¡Aprovecha esta oferta y viaja a París por solo 99 euros!";
+  } elseif ($perfil == "moda") {
+    echo "Anuncio: ¡Descubre las últimas tendencias y renueva tu armario con un 50% de descuento!";
+  } elseif ($perfil == "tecnología") {
+    echo "Anuncio: ¡No te pierdas esta oportunidad y consigue el nuevo iPhone 12 por solo 699 euros!";
+  }
+}
+```
+
+El resultado de este código sería:
+
+```
+Anuncio: ¡Aprovecha esta oferta y viaja a París por solo 99 euros!
 ```
